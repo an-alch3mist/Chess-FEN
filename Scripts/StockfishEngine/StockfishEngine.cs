@@ -3,6 +3,14 @@ using System.Diagnostics;
 using System.IO;
 using System.Threading.Tasks;
 
+
+/*
+	used as: 
+		string best = await StockfishEngine.SuggestBestMove(
+			fen: "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR b KQkq - 0 1",
+			depth: 10
+		);
+*/
 public class StockfishEngine
 {
 	private static Process _engine;
