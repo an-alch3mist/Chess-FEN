@@ -1,10 +1,9 @@
 using System;
 using System.Linq;
 using System.Collections.Generic;
+
 using UnityEngine;
-
 using SPACE_UTIL;
-
 
 namespace SPACE_CHESS
 {
@@ -20,8 +19,8 @@ namespace SPACE_CHESS
 		{
 			if (INPUT.M.InstantDown(0))
 			{
-				string best = await StockfishConnector.SuggestBestMove(this.fen, this.depth);
-				// Debug.Log(best);
+				string best = await StockfishEngine.SuggestBestMove(this.fen, this.depth);
+				Debug.Log(best);
 
 				Debug.Log(C_E.chess_coord("e2"));
 				Debug.Log("A".fmatch(@"[a-g]", "gi"));
@@ -32,7 +31,7 @@ namespace SPACE_CHESS
 		#region ad
 		private void OnApplicationQuit()
 		{
-			StockfishConnector.Quit();
+			StockfishEngine.Quit();
 		}
 		#endregion
 	}

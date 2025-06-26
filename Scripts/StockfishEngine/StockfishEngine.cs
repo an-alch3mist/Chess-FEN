@@ -2,9 +2,8 @@ using System;
 using System.Diagnostics;
 using System.IO;
 using System.Threading.Tasks;
-using UnityEngine;
 
-public class StockfishConnector
+public class StockfishEngine
 {
 	private static Process _engine;
 	private static StreamWriter _input;
@@ -20,7 +19,7 @@ public class StockfishConnector
 			return;
 
 		// 1) Launch
-		string exe = Path.Combine(Application.streamingAssetsPath, "Stockfish/stockfish-windows-x86-64-avx2");
+		string exe = C_E.loc_stockfish;
 		_engine = new Process
 		{
 			StartInfo = new ProcessStartInfo
@@ -55,7 +54,6 @@ public class StockfishConnector
 	/// <param name="fen">FEN string describing the position (must include side-to-move)</param>
 	/// <param name="depth">Search depth (e.g. 10)</param>
 	/// <returns>UCI bestmove token (e.g. “e7e5”)</returns>
-	/// 
 	static bool InProgress = false;
 	public static async Task<string> SuggestBestMove(string fen, int depth)
 	{
@@ -72,7 +70,7 @@ public class StockfishConnector
 		_input.WriteLine($"go depth {depth}");
 
 		// Read until bestmove appears
-		
+
 		while (true)
 		{
 			string line = await _output.ReadLineAsync();
@@ -92,7 +90,6 @@ public class StockfishConnector
 		UnityEngine.Debug.LogWarning("[Stockfish] No bestmove received.");
 		return string.Empty;
 	}
-
 	private static async Task WaitForKeyword(string kw)
 	{
 		string line;
@@ -102,7 +99,6 @@ public class StockfishConnector
 				return;
 		}
 	}
-
 	public static void Quit()
 	{
 		if (_engine != null && !_engine.HasExited)
