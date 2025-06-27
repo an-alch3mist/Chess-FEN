@@ -56,48 +56,44 @@ public class StockfishEngine
 		}
 	}
 
-	/// <summary>
-	/// Asks Stockfish for the best move from the given FEN at the specified depth.
-	/// </summary>
-	/// <param name="fen">FEN string describing the position (must include side-to-move)</param>
-	/// <param name="depth">Search depth (e.g. 10)</param>
-	/// <returns>UCI bestmove token (e.g. “e7e5”)</returns>
 	static bool InProgress = false;
 	public static async Task<string> SuggestBestMove(string fen, int depth)
 	{
-		if (InProgress == true)
+		if (InProgress)
 			return "still in progress";
 
 		InProgress = true;
-		await EnsureEngineStarted();
-
-		// Tell the engine the position
-		_input.WriteLine($"position fen {fen}");
-
-		// Start search
-		_input.WriteLine($"go depth {depth}");
-
-		// Read until bestmove appears
-
-		while (true)
+		try
 		{
-			string line = await _output.ReadLineAsync();
-			if (line == null) break;
+			await EnsureEngineStarted().ConfigureAwait(false);
 
-			if (line.StartsWith("bestmove"))
+			// send the position & search commands
+			_input.WriteLine($"position fen {fen}");
+			_input.WriteLine($"go depth {depth}");
+
+			// read everything up through the "bestmove" line
+			var sb = new System.Text.StringBuilder();
+			while (true)
 			{
-				// format: “bestmove e7e5 ponder a7a6”
-				var parts = line.Split(' ');
-				string best = parts.Length > 1 ? parts[1] : string.Empty;
-				InProgress = false;
-				return best;
-			}
-		}
+				string line = await _output.ReadLineAsync().ConfigureAwait(false);
+				if (line == null)
+					break;   // engine closed unexpectedly
 
-		InProgress = false;
-		UnityEngine.Debug.LogWarning("[Stockfish] No bestmove received.");
-		return string.Empty;
+				sb.AppendLine(line);
+
+				if (line.StartsWith("bestmove", StringComparison.Ordinal))
+					break;   // we have the full search transcript
+			}
+
+			return sb.ToString();
+		}
+		finally
+		{
+			InProgress = false;
+		}
 	}
+
+
 	private static async Task WaitForKeyword(string kw)
 	{
 		string line;

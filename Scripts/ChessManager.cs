@@ -21,12 +21,15 @@ namespace SPACE_CHESS
 			{
 				string best = await StockfishEngine.SuggestBestMove(this.fen, this.depth);
 				Debug.Log(best);
+				LOG.SaveLog(best);
 
 				Debug.Log(C_E.chess_coord("e2"));
 				Debug.Log("A".fmatch(@"[a-g]", "gi"));
 				Debug.Log(C_E.chess_move("e2e4").from +  " // " + C_E.chess_move("g7g5").to);
 			}
 		}
+
+		// TODO: Live Chess with AI at depth: 10
 
 		#region ad
 		private void OnApplicationQuit()
