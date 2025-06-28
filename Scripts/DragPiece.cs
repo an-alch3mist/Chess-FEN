@@ -52,6 +52,10 @@ namespace SPACE_CHESS
 			}
 		}
 
+		// TODO: v0.2
+		// drag or capture only where its allowed for a piece
+		// when checked, the incoming check should be either blocked by other piece or king should be moved, nothing else is allowed
+
 		async void make_move_black()
 		{
 			// await C.delay(2000);
