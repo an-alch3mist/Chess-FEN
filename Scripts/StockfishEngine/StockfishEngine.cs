@@ -25,7 +25,8 @@ public class StockfishEngine : MonoBehaviour
 	[Range(16, 256)]
 	public int hashSizeMB = 64;
 
-	[Header("Time Based Search also require hashMB")]
+	[Header("Time Based Search also require hashMB" +
+			"")]
 	[Range(50, 5000)]
 	public int defaultTimeMs = 200;
 
