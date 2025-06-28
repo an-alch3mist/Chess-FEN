@@ -180,6 +180,7 @@ MonoBehaviour:
   - {fileID: 958517369676101176, guid: 55aa9474a2a9a5a46b5a5fb1eac6d769, type: 3}
   - {fileID: 4497900412305710831, guid: 2698253456c51b04b8f85f5d0adc6b54, type: 3}
   - {fileID: 4717575459653525052, guid: d3597784c4a302549b98153607748f97, type: 3}
+  tm: {fileID: 1410323404}
 --- !u!1001 &28900111
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1601,8 +1602,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4290690750
+  m_fontColor: {r: 0.745283, g: 0.745283, b: 0.745283, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1619,8 +1620,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 15
+  m_fontSizeBase: 15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1712,7 +1713,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee3ddf0c1bfd3234983ac01230c815ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultDepth: 16
+  defaultDepth: 1
   hashSizeMB: 128
   defaultTimeMs: 200
   threads: 1

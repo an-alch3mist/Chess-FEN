@@ -6,7 +6,6 @@ using SPACE_UTIL;
 
 namespace SPACE_CHESS
 {
-
 	public class DragPiece : MonoBehaviour
 	{
 		static GameObject Ghost_obj_ref;
@@ -32,23 +31,30 @@ namespace SPACE_CHESS
 				}
 				else // released instant
 				{
-					this.transform.position = this.get_round_clamp_tr_pos();
+					if( C.inrange(this.transform.position , new Vector3(-0.5f, -0.5f, 0f), new Vector3(+7.5f, +7.5f, 0f))
+						&& !C.zero(C.round(this.transform.position) - C.round(this.from_vec3)))
+					{
+						this.transform.position = this.get_round_clamp_tr_pos();
+						// make move white 
+						string move = C_E.get_chess_coord(this.from_vec3) + C_E.get_chess_coord(this.transform.position);
+						ChessManager.Ins.MakeMove(move, 'w');
+
+						// make move black (cpu)
+						make_move_black();
+					}
+					else // released at same place or out of bounds
+					{
+						this.transform.position = C.round(this.from_vec3);
+					}
 					Ghost_obj_ref.SetActive(false);
 					this.need_to_move = false;
-
-					// make move white 
-					string move = C_E.get_chess_coord(this.from_vec3) + C_E.get_chess_coord(this.transform.position);
-					ChessManager.Ins.MakeMove(move, 'w');
-
-					// make move black (cpu)
-					make_move_black();
 				}
 			}
 		}
 
 		async void make_move_black()
 		{
-			await C.delay(2000);
+			// await C.delay(2000);
 			//
 			var sw = new System.Diagnostics.Stopwatch();
 			sw.Start();

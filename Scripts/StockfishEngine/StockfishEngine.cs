@@ -20,9 +20,9 @@ public class StockfishEngine : MonoBehaviour
 
 	[Header("Engine Settings")]
 	[Header("Depth Based Search")]
-	[Range(1, 20)]
-	public int defaultDepth = 10;
-	[Range(16, 256)]
+	[Range(1, 12)]
+	public int defaultDepth = 5;
+	[Range(16, 128)]
 	public int hashSizeMB = 64;
 
 	[Header("Time Based Search also require hashMB" +

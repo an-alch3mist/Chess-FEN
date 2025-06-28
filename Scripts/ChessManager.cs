@@ -68,6 +68,7 @@ namespace SPACE_CHESS
 		}
 
 		// called externally
+		[SerializeField] TMPro.TextMeshProUGUI tm;
 		public void MakeMove(string move = "e2e4", char ad_turn = 'w')
 		{
 			(v2 from, v2 to) = C_E.get_delta_coord(move);
@@ -122,6 +123,7 @@ namespace SPACE_CHESS
 			LOG.H(ad_turn + '-'.repeat(100));
 			LOG.SaveLog(C_E.B_to_str(B));
 			LOG.SaveLog(C_E.B_to_FEN(B));
+			this.tm.text = C_E.B_to_FEN(B);
 			LOG.HEnd(ad_turn + '-'.repeat(100));
 		}
 
