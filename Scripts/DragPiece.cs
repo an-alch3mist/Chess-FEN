@@ -21,22 +21,25 @@ namespace SPACE_CHESS
 
 		private void Update()
 		{
+			INPUT.M.up = Vector3.forward;
+			v2 pos_I = C.round(INPUT.M.getPos3D);
+			Vector3 pos_F = INPUT.M.getPos3D;
+
 			if (this.need_to_move == true)
 			{
 				if (INPUT.M.HeldDown(0))
 				{
-					Ghost_obj_ref.transform.position = this.get_round_clamp_tr_pos();
-					INPUT.M.up = Vector3.forward;
-					this.transform.position = INPUT.M.getPos3D;
+					Ghost_obj_ref.transform.position = pos_I;
+					this.transform.position = pos_F;
 				}
 				else // released instant
 				{
-					if( C.inrange(this.transform.position , new Vector3(-0.5f, -0.5f, 0f), new Vector3(+7.5f, +7.5f, 0f))
-						&& !C.zero(C.round(this.transform.position) - C.round(this.from_vec3)))
+					// LOG.SaveLog(ChessManager.Ins.getAvailablePos(C_E.get_chess_coord(release_v2)).ToTable());
+					if (ChessManager.Ins.IsInAvailablePos(this.from_v2, pos_I) == true)
 					{
-						this.transform.position = this.get_round_clamp_tr_pos();
+						this.transform.position = pos_I;
 						// make move white 
-						string move = C_E.get_chess_coord(this.from_vec3) + C_E.get_chess_coord(this.transform.position);
+						string move = C_E.get_chess_coord(this.from_v2) + C_E.get_chess_coord(pos_I);
 						ChessManager.Ins.MakeMove(move, 'w');
 
 						// make move black (cpu)
@@ -44,7 +47,7 @@ namespace SPACE_CHESS
 					}
 					else // released at same place or out of bounds
 					{
-						this.transform.position = C.round(this.from_vec3);
+						this.transform.position = this.from_v2;
 					}
 					Ghost_obj_ref.SetActive(false);
 					this.need_to_move = false;
@@ -58,7 +61,7 @@ namespace SPACE_CHESS
 
 		async void make_move_black()
 		{
-			// await C.delay(2000);
+			await C.delay(500);
 			//
 			var sw = new System.Diagnostics.Stopwatch();
 			sw.Start();
@@ -80,20 +83,14 @@ namespace SPACE_CHESS
 			ChessManager.Ins.MakeMove(move, 'b');
 		}
 
-
-		Vector3 get_round_clamp_tr_pos()
-		{
-			return C.round(C.clamp(this.transform.position, C_E.bound.m, C_E.bound.M)); ;
-		}
-
 		bool need_to_move = false;
-		Vector3 from_vec3;
+		v2 from_v2;
 		private void OnMouseDown()
 		{
 			Ghost_obj_ref.SetActive(true);
 			this.need_to_move = true;
 
-			this.from_vec3 = this.transform.position;
+			this.from_v2 = this.transform.position;
 		}
 	}
 }

@@ -9,11 +9,11 @@ public static class C_E
 	public static string loc_stockfish = Application.streamingAssetsPath + "/stockfish-windows-x86-64-avx2.exe";
 
 
-	public static (Vector2 m, Vector2 M) bound
+	public static (v2 m, v2 M) bound
 	{
 		get
 		{
-			return (new Vector2(0, 0), new Vector2(7, 7));
+			return ((0, 0), (7, 7));
 		}
 	}
 
@@ -138,16 +138,13 @@ public static class C_E
 		return str;
 	}
 
-	public static string B_to_FEN(List<List<char>> B)
+	public static string B_to_FEN(List<List<char>> B, char side = 'b')
 	{
 		// 1) Generate only the piece‑placement
 		var placement = C_E.B_to_FEN_arrangement(B);
-		// 2) Figure out side‑to‑move ('w' or 'b')
-		var stm = "b";
-		// 3) Statically append the four “dummy” fields:
-		return $"{placement} {stm} - - 0 1";
+		// 2) Statically append the four “dummy” fields:
+		return $"{placement} {side} - - 0 1";
 	}
-
 	#endregion
 
 	#region B_OBJ
