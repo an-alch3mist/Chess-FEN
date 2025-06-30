@@ -74,7 +74,7 @@ public class StockfishEngine : MonoBehaviour
 			// UnityEngine.Debug.Log("Starting Stockfish engine...");
 
 			// 1) Launch process
-			string exe = C_E.loc_stockfish;
+			string exe = Ce.loc_stockfish;
 			if (!File.Exists(exe))
 			{
 				UnityEngine.Debug.LogError($"Stockfish executable not found at: {exe}");

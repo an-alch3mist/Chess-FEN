@@ -63,7 +63,7 @@ namespace SPACE_CHESS
 		[SerializeField] TMPro.TextMeshProUGUI tm_fen;
 		public void MakeMove(string move = "e2e4", char just_to_log_side = 'w')
 		{
-			(v2 from, v2 to) = C_E.get_delta_coord(move);
+			(v2 from, v2 to) = Ce.get_delta_coord(move);
 			Debug.Log($"move of {from} {to} has been made for {move}");
 
 			char from_char = B[from.y][from.x];
@@ -110,12 +110,12 @@ namespace SPACE_CHESS
 				// << alter the B_OBJ
 			}
 
-			Debug.Log(C_E.B_to_str(B));
+			Debug.Log(Ce.B_to_str(B));
 
 			LOG.H(just_to_log_side + '-'.repeat(100));
-			LOG.SaveLog(C_E.B_to_str(B));
-			LOG.SaveLog(C_E.B_to_FEN(B));
-			this.tm_fen.text = C_E.B_to_FEN(B);
+			LOG.SaveLog(Ce.B_to_str(B));
+			LOG.SaveLog(Ce.B_to_FEN(B));
+			this.tm_fen.text = Ce.B_to_FEN(B);
 			LOG.HEnd(just_to_log_side + '-'.repeat(100));
 		}
 
@@ -196,7 +196,7 @@ namespace SPACE_CHESS
 					for (int i0 = 1; i0 <= 7; i0 += 1)
 					{
 						v2 coord = from_coord + dir * i0;
-						if (coord.inrange(C_E.bound.m, C_E.bound.M) == false)
+						if (coord.inrange(Ce.bound.m, Ce.bound.M) == false)
 							break;
 						if (get_side_at_coord(coord) == curr_side)
 							break;
@@ -225,7 +225,7 @@ namespace SPACE_CHESS
 					for (int i0 = 1; i0 <= 7; i0 += 1)
 					{
 						v2 coord = from_coord + dir * i0;
-						if (coord.inrange(C_E.bound.m, C_E.bound.M) == false)
+						if (coord.inrange(Ce.bound.m, Ce.bound.M) == false)
 							break;
 						if (get_side_at_coord(coord) == curr_side)
 							break;
@@ -246,7 +246,7 @@ namespace SPACE_CHESS
 					for (int i0 = 1; i0 <= 7; i0 += 1)
 					{
 						v2 coord = from_coord + dir * i0;
-						if (coord.inrange(C_E.bound.m, C_E.bound.M) == false)
+						if (coord.inrange(Ce.bound.m, Ce.bound.M) == false)
 							break;
 						if (get_side_at_coord(coord) == curr_side)
 							break;
@@ -264,7 +264,7 @@ namespace SPACE_CHESS
 				foreach (v2 dir in v2.getDIR(diagonal: true))
 				{
 					v2 coord = from_coord + dir * 1;
-					if (coord.inrange(C_E.bound.m, C_E.bound.M) == false)
+					if (coord.inrange(Ce.bound.m, Ce.bound.M) == false)
 						continue; // break;
 					if (get_side_at_coord(coord) == curr_side)
 						continue; // break;
@@ -333,8 +333,8 @@ namespace SPACE_CHESS
 				MAP_type_prefab[type.toChar()] = piece;
 			}
 
-			B = C_E.FEN_to_B();
-			B_OBJ = C_E.B_to_OBJ(B, MAP_type_prefab);
+			B = Ce.FEN_to_B();
+			B_OBJ = Ce.B_to_OBJ(B, MAP_type_prefab);
 
 			/* checked
 			foreach(var line in B)

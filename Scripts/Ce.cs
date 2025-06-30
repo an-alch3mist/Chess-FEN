@@ -4,11 +4,12 @@ using UnityEngine;
 using System.Text.RegularExpressions;
 using SPACE_UTIL;
 
-public static class C_E
+public static class Ce
 {
+	// Constants
 	public static string loc_stockfish = Application.streamingAssetsPath + "/stockfish-windows-x86-64-avx2.exe";
-
-
+	public static int w = 8, h = 8;
+	public static v2 m = (0, 0), M = (7, 7);
 	public static (v2 m, v2 M) bound
 	{
 		get
@@ -16,6 +17,7 @@ public static class C_E
 			return ((0, 0), (7, 7));
 		}
 	}
+
 
 	#region coord
 	// a1, e5, g8 //
@@ -138,12 +140,12 @@ public static class C_E
 		return str;
 	}
 
-	public static string B_to_FEN(List<List<char>> B, char side = 'b')
+	public static string B_to_FEN(List<List<char>> B, char oppo_side = 'b')
 	{
 		// 1) Generate only the piece‑placement
-		var placement = C_E.B_to_FEN_arrangement(B);
+		var placement = Ce.B_to_FEN_arrangement(B);
 		// 2) Statically append the four “dummy” fields:
-		return $"{placement} {side} - - 0 1";
+		return $"{placement} {oppo_side} - - 0 1";
 	}
 	#endregion
 
