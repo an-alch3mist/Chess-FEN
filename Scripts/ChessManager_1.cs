@@ -461,9 +461,6 @@ namespace SPACE_CHESS
 			//
 			if (CheckForGameOver(king_side: (oppo_side == 'b') ? 'w' : 'b'))
 				Debug.Log($"Check Mate to king_side: {'w'}, {oppo_side} wins");
-			#region OBJ
-			ShowReach(false, (0, 0));
-			#endregion
 		}
 
 		#region OBJ

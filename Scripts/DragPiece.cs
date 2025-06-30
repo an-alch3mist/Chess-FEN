@@ -32,7 +32,7 @@ namespace SPACE_CHESS
 			{
 				if (INPUT.M.HeldDown(0) == true) // still held down
 				{
-					#region Ghost
+					#region ghost
 					Ghost_obj_ref.transform.position = pos_I;
 					#endregion
 					this.transform.position = pos_F;
@@ -77,7 +77,7 @@ namespace SPACE_CHESS
 			this.from_coord = this.transform.position;
 			#region reach
 			ChessManager_1.ShowReach(false, (0, 0)); // hide everything
-			ChessManager_1.ShowReach(true, transform.position);
+			ChessManager_1.ShowReach(true, from_coord);
 			#endregion
 		}
 	}
