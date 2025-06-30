@@ -443,12 +443,11 @@ namespace SPACE_CHESS
 			LOG.SaveLog(Ce.B_to_FEN(main_B, oppo_side: oppo_side));
 			LOG.SaveLog(best, $"move: {chess_move}");
 			LOG.HEnd("calculating" + '-'.repeat(100));
-
 			Debug.Log("calculating" + "best move after split: " + chess_move);
 
 			if(chess_move.fmatch(@"[a-h][1-8][a-h][1-8]") == false)
 			{
-				if (ChessManager_1.CheckForGameOver(king_side: 'b') == true)
+				if (ChessManager_1.CheckForGameOver(king_side: 'b') == true) // to check
 					Debug.Log($"Check to {'b'}, {'w'} wins");
 				Debug.LogError("Best move was not found");
 				return;
@@ -462,6 +461,9 @@ namespace SPACE_CHESS
 			//
 			if (CheckForGameOver(king_side: (oppo_side == 'b') ? 'w' : 'b'))
 				Debug.Log($"Check Mate to king_side: {'w'}, {oppo_side} wins");
+			#region OBJ
+			ShowReach(false, (0, 0));
+			#endregion
 		}
 
 		#region OBJ
