@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using SPACE_UTIL;
+using System.Threading.Tasks;
 
 namespace SPACE_CHESS
 {
@@ -40,15 +41,13 @@ namespace SPACE_CHESS
 				else // released instant
 				{
 					// LOG.SaveLog(ChessManager.Ins.getAvailablePos(C_E.get_chess_coord(release_v2)).ToTable());
-					if (ChessManager_1.IsAllowed(from_coord, to_coord: pos_I)) // released at valid coord ?
+					if (ChessManager_1.IsAllowed(from_coord, to_coord: pos_I, king_side: 'w')) // released at valid coord ?
 					{
-						ChessManager_1.MakeMoveOnBoard(from_coord, to_coord: pos_I);
+						ChessManager_1.MakeMoveOnBoard(from_coord, to_coord: pos_I); // could be 'w' or 'b'
 						#region reach
 						ChessManager_1.ShowReach(false, (0, 0));
 						#endregion
-
-						// make move black (cpu)
-						ChessManager_1.make_move_oppo(oppo_side: 'b'); // async
+						MakeMoveOnBoard_Async_Cpu(pos_I);
 					}
 					else // released at same place or out of bounds
 					{
@@ -62,8 +61,16 @@ namespace SPACE_CHESS
 			}
 		}
 
+		async void MakeMoveOnBoard_Async_Cpu(v2 pos_I)
+		{
+			await C.delay(500);
+			await ChessManager_1.MakeCpuMoveOnBoard(cpu_side: 'b'); // async
+			#region CheckForKingFall
+			if (ChessManager_1.CheckForKingFall('w')) Debug.Log($"{'w'} wins");
+			if (ChessManager_1.CheckForKingFall('b')) Debug.Log($"{'b'} wins");
+			#endregion
+		}
 
-		
 
 		bool need_to_move = false;
 		v2 from_coord;

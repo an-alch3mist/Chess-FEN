@@ -5,6 +5,7 @@ using UnityEngine;
 
 using SPACE_UTIL;
 using SPACE_UISystem;
+using System.Threading.Tasks;
 
 namespace SPACE_CHESS
 {
@@ -393,9 +394,12 @@ namespace SPACE_CHESS
 
 		#region called externally
 		// called externally when unit is drag and dropped >>
-		public static bool IsAllowed(v2 from_coord, v2 to_coord)
+		public static bool IsAllowed(v2 from_coord, v2 to_coord, char king_side)
 		{
-			List<v2> availableTo = MAP_from_availableTo(main_B, king_side: 'w')[from_coord];
+			LOG.H("check");
+			LOG.SaveLog(MAP_from_availableTo(main_B, king_side).ToTable(name: "MAP_v2__v2_L<v2>"));
+			LOG.HEnd("check");
+			List<v2> availableTo = MAP_from_availableTo(main_B, king_side)[from_coord];
 			if (availableTo.findIndex(coord => coord == to_coord) != -1) // exist
 				return true;
 			return false;
@@ -426,45 +430,33 @@ namespace SPACE_CHESS
 			main_B[from_coord.y][from_coord.x] = ' ';
 			// << board move
 		}
-		public static async void make_move_oppo(char oppo_side = 'b')
+		public static async Task MakeCpuMoveOnBoard(char cpu_side = 'b')
 		{
 			await C.delay(500);
-			//
 			var sw = new System.Diagnostics.Stopwatch();
 			sw.Start();
 			Debug.Log("calculating...");
-			string best = await StockfishEngine.Ins.SuggestAtDepth(Ce.B_to_FEN(main_B, oppo_side: oppo_side));
+			string best = await StockfishEngine.Ins.SuggestAtDepth(Ce.B_to_FEN(main_B, oppo_side: cpu_side));
 			sw.Stop();
-			Debug.Log("elapsed ms for best move: " + sw.ElapsedMilliseconds);
-
+			//
+			#region log
 			string chess_move = best.split(@"\n").gl(0).split(@" ")[1];
-
+			Debug.Log("elapsed ms for best move: " + sw.ElapsedMilliseconds);
 			LOG.H("calculating" + '-'.repeat(100));
 			LOG.SaveLog(main_B.ToBoard('.'));
-			LOG.SaveLog(Ce.B_to_FEN(main_B, oppo_side: oppo_side));
+			LOG.SaveLog(Ce.B_to_FEN(main_B, oppo_side: cpu_side));
 			LOG.SaveLog(best, $"move: {chess_move}");
 			LOG.HEnd("calculating" + '-'.repeat(100));
 			Debug.Log("calculating" + "best move after split: " + chess_move);
+			#endregion
 
-			if(chess_move.fmatch(@"[a-h][1-8][a-h][1-8]") == false)
+			if (chess_move.fmatch(@"[a-h][1-8][a-h][1-8]") == false)
 			{
-				if (ChessManager_1.CheckForGameOver(king_side: 'b') == true) // to check
-				{
-					Debug.Log($"Check to {'b'}, {'w'} wins");
-					return;
-				}
-				Debug.LogError("Best move was not found");
-				return;
+				if (chess_move.fmatch(@"none") == true) { Debug.Log("Best move is none"); return; }
+				else									{ Debug.LogError("Best move is neither [a-h][1-8][a-h][1-8] nor its 'none'"); return; }
 			}
-
-			// found the best move, make move on the board
-			v2 from_coord = Ce.get_delta_coord(chess_move).from;
-			v2 to_coord = Ce.get_delta_coord(chess_move).to;
+			(v2 from_coord, v2 to_coord) = Ce.get_delta_coord(chess_move);
 			MakeMoveOnBoard(from_coord, to_coord);
-
-			//
-			if (CheckForGameOver(king_side: (oppo_side == 'b') ? 'w' : 'b'))
-				Debug.Log($"Check Mate to king_side: {'w'}, {oppo_side} wins");
 		}
 
 		#region OBJ
@@ -495,7 +487,7 @@ namespace SPACE_CHESS
 		}
 		#endregion
 
-		public static bool CheckForGameOver(char king_side = 'w')
+		public static bool CheckForKingFall(char king_side = 'w')
 		{
 			foreach (var kvp in MAP_from_availableTo(main_B, king_side))
 				if (kvp.Value.Count > 0) // found a move that can be made
