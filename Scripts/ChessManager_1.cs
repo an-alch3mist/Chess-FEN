@@ -54,7 +54,7 @@ namespace SPACE_CHESS
 			#endregion
 		}
 
-		static string IN = "n2qk3/8/8/8/8/8/P7/RNBQKBNR b"; // initial FEN
+		static string IN = "n2pk3/8/8/8/8/8/P7/RNBQKBNR b"; // initial FEN
 		static List<List<char>> main_B;
 		#region OBJ
 		static List<List<GameObject>> main_OBJ_unit;
@@ -356,6 +356,7 @@ namespace SPACE_CHESS
 			+ depends on: get_new_B_suppose_move_was_made
 		*/
 		// when MAP_from_availableTo(main_B, king_side) got .Count == 0, **gameOver** for king_side
+		// return all available pos each unit in king_side can make
 		static Dictionary<v2, List<v2>> MAP_from_availableTo(List<List<char>> main_B, char king_side = 'w')
 		{
 			Dictionary<v2, List<v2>> _MAP_from_availableTo = new Dictionary<v2, List<v2>>();
@@ -379,7 +380,7 @@ namespace SPACE_CHESS
 						List<v2> new_COORD = new List<v2>();
 						foreach (v2 to_coord in COORD)
 						{
-							List<v2> UNIT_threat_to_king = opp_units_threatned_king(get_new_B_suppose_move_was_made(main_B, unit_coord, to_coord), king_side: 'w');
+							List<v2> UNIT_threat_to_king = opp_units_threatned_king(get_new_B_suppose_move_was_made(main_B, unit_coord, to_coord), king_side: king_side);
 							if (UNIT_threat_to_king.Count == 0)
 								new_COORD.Add(to_coord);
 						}
@@ -448,7 +449,10 @@ namespace SPACE_CHESS
 			if(chess_move.fmatch(@"[a-h][1-8][a-h][1-8]") == false)
 			{
 				if (ChessManager_1.CheckForGameOver(king_side: 'b') == true) // to check
+				{
 					Debug.Log($"Check to {'b'}, {'w'} wins");
+					return;
+				}
 				Debug.LogError("Best move was not found");
 				return;
 			}
