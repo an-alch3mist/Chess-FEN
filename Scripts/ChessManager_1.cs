@@ -480,6 +480,11 @@ namespace SPACE_CHESS
 				char oppo_side = (king_side == 'w') ? 'b' : 'w';
 				foreach (v2 to_coord in MAP_from_availableTo(main_B, king_side: king_side)[from_coord])
 				{
+					/*
+						obj
+							empty unit sprite
+							oppo unit sprite
+					*/
 					main_OBJ_reach[to_coord.y][to_coord.x].SetActive(true);
 					if (get_side_at_coord(main_B, to_coord) == oppo_side)
 						main_OBJ_reach[to_coord.y][to_coord.x].NameStartsWith("oppo").SetActive(true);

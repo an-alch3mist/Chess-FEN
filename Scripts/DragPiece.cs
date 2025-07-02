@@ -66,11 +66,29 @@ namespace SPACE_CHESS
 			await C.delay(500);
 			await ChessManager_1.MakeCpuMoveOnBoard(cpu_side: 'b'); // async
 			#region CheckForKingFall
-			if (ChessManager_1.CheckForKingFall(king_side: 'w')) Debug.Log($"{'b'} wins");
-			if (ChessManager_1.CheckForKingFall(king_side: 'b')) Debug.Log($"{'w'} wins");
+			if (ChessManager_1.CheckForKingFall(king_side: 'w')) Debug.Log($"{'w'} wins");
+			if (ChessManager_1.CheckForKingFall(king_side: 'b')) Debug.Log($"{'b'} wins");
 			#endregion
 			//
 			this.InProgress = false;
+
+			#region reach
+			/* // why calling reach here, leads an error of key not found in MAP_from_availableTo DOC ?
+			ChessManager_1.ShowReach(false, (0, 0)); // hide everything
+			ChessManager_1.ShowReach(true, this.from_coord); // show reach for this from_coord
+			*/
+
+			/*
+			reason: it's looking for key with unit ' '
+			since MAP_from_availableTo populate only the king_side unit coord for its key
+			the from_coord with ' ' after white move was made is missing in new MAP
+			so, ShowReach at this.from which depend on 
+				MAP_from_availableTo which returns all available to_coord of units with same as king_side, do not contain key from_coord anymore after move was made.
+
+			only hidden can be done at anypoint in time
+			to show(true) => mouse need to be held down
+			*/
+			#endregion
 		}
 
 		bool InProgress = false;
