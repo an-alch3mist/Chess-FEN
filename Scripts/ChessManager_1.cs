@@ -357,7 +357,7 @@ namespace SPACE_CHESS
 			+ depends on: get_new_B_suppose_move_was_made
 		*/
 		// when MAP_from_availableTo(main_B, king_side) got .Count == 0, **gameOver** for king_side
-		// return all available pos each unit in king_side can make
+		// return all available pos each unit in king_side can make, so that: king won't be in danger
 		static Dictionary<v2, List<v2>> MAP_from_availableTo(List<List<char>> main_B, char king_side = 'w')
 		{
 			Dictionary<v2, List<v2>> _MAP_from_availableTo = new Dictionary<v2, List<v2>>();
@@ -389,7 +389,19 @@ namespace SPACE_CHESS
 					}
 				}
 			return _MAP_from_availableTo;
-		} 
+		}
+
+		/*
+			+ depends on: Doc<v2, L<v2>> MAP_from_availableTo
+		*/
+		public static bool SquareUnderAttack(List<List<char>> B, v2 coord, char oppo_side = 'b')
+		{
+			foreach (var kvp in MAP_from_availableTo(B, king_side: oppo_side))
+				foreach (v2 to_coord in kvp.Value)
+					if (to_coord == coord)
+						return true;
+			return false;
+		}
 		#endregion
 
 		#region called externally

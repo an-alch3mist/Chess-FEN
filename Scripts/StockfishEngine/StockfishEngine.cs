@@ -19,19 +19,24 @@ namespace SPACE_CHESS
 	{
 		public static StockfishEngine Ins { get; private set; }
 
+		[Header("loc_file")]
+		[Tooltip("/loc_file.exe")]
+		[SerializeField] string win_path_inside_streamingAssets = "/stockfish-windows-x86-64-avx2.exe";
+
+		[Header("config")]
 		[Header("Engine Settings")]
 		[Header("Depth Based Search")]
-		[Range(1, 12)]
-		public int defaultDepth = 5;
+		[Range(1, 20)]
+		[SerializeField] int defaultDepth = 5;
 		[Range(16, 128)]
-		public int hashSizeMB = 64;
+		[SerializeField] int hashSizeMB = 64;
 
 		[Header("Time Based Search also require hashMB")]
 		[Range(50, 5000)]
-		public int defaultTimeMs = 200;
+		[SerializeField] int defaultTimeMs = 200;
 
 		[Range(1, 8)]
-		public int threads = 1;
+		[SerializeField] int threads = 1;
 
 		// Stores the last suggested move (algebraic notation), updated after any search
 		public string SuggestedMove { get; private set; }
@@ -68,7 +73,7 @@ namespace SPACE_CHESS
 		{
 			try
 			{
-				string exe = Ce.loc_stockfish;
+				string exe = Application.streamingAssetsPath + this.win_path_inside_streamingAssets;
 				if (!File.Exists(exe))
 				{
 					UnityEngine.Debug.LogError($"Stockfish executable not found at: {exe}");
