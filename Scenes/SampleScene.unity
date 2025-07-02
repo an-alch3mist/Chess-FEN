@@ -3953,8 +3953,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee3ddf0c1bfd3234983ac01230c815ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultDepth: 12
-  hashSizeMB: 128
+  win_path_inside_streamingAssets: /stockfish-windows-x86-64-avx2.exe
+  defaultDepth: 5
+  hashSizeMB: 64
   defaultTimeMs: 200
   threads: 1
 --- !u!1 &1650457005

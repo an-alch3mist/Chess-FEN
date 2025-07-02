@@ -6,6 +6,7 @@ using UnityEngine;
 using SPACE_UTIL;
 using SPACE_UISystem;
 using System.Threading.Tasks;
+using SPACE_Stockfish;
 
 namespace SPACE_CHESS
 {
@@ -390,7 +391,9 @@ namespace SPACE_CHESS
 				}
 			return _MAP_from_availableTo;
 		}
+		#endregion
 
+		#region called externally
 		/*
 			+ depends on: Doc<v2, L<v2>> MAP_from_availableTo
 		*/
@@ -402,9 +405,6 @@ namespace SPACE_CHESS
 						return true;
 			return false;
 		}
-		#endregion
-
-		#region called externally
 		// called externally when unit is drag and dropped >>
 		public static bool IsAllowed(v2 from_coord, v2 to_coord, char king_side)
 		{
@@ -416,6 +416,7 @@ namespace SPACE_CHESS
 				return true;
 			return false;
 		}
+		
 		public static void MakeMoveOnBoard(v2 from_coord, v2 to_coord)
 		{
 			#region OBJ
@@ -448,7 +449,7 @@ namespace SPACE_CHESS
 			var sw = new System.Diagnostics.Stopwatch();
 			sw.Start();
 			Debug.Log("calculating...");
-			string best = await StockfishEngine.Ins.SuggestAtDepth(Ce.B_to_FEN(main_B, oppo_side: cpu_side));
+			string best = await SPACE_Stockfish.StockfishManager.Ins.SuggestAtDepth(Ce.B_to_FEN(main_B, oppo_side: cpu_side));
 			sw.Stop();
 			//
 			#region log
@@ -507,7 +508,28 @@ namespace SPACE_CHESS
 			// no moves found
 			return true;
 		}
-		// << called externally when unit is drag and dropped  
 		#endregion
 	}
 }
+
+
+/* ```cs
+	// make sure: coord is in range of B.w, B.h
+
+	// 0.
+	static char get_state_of_coord( B, coord ) => one of 'w' or 'b' or ' '
+
+	// 1.
+	static List<v2> reachable_COORD_from_unit( B, v2 from_coord )
+	static List<v2> opp_units_threatned_king ( B, char king_side = 'w' )
+
+	// 2.
+	static List<List<char>> get_new_B_suppose_move_was_made( B, v2 from_coord, v2 to_coord )
+	static Dictionary<v2, List<v2>> MAP_from_availableTo   ( main_B, char king_side = 'w' )
+
+	// 3. Called externally 
+		// depends on: MAP_from_availableTo( main_B, 'b' )
+		public static bool SquareUnderAttack( B, v2 coord, char oppo_side = 'b' )
+		// depends on: MAP_from_availableTo( main_B, 'w' )
+		public static bool IsAllowed( v2 from_coord, v2 to_coord, char king_side = 'w')
+``` */

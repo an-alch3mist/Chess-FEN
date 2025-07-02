@@ -5673,3 +5673,1334 @@ move: f8g7
 
 // << calculating----------------------------------------------------------------------------------------------------
 
+// check >>
+
+MAP_v2__v2_L<v2>:
+pri-key   | pri-value  
+----------+------------
+[0, 0]    | List: 0    
+[1, 0]    | List: 3    
+[2, 0]    | List: 7    
+[3, 0]    | List: 14   
+[4, 0]    | List: 3    
+[5, 0]    | List: 7    
+[6, 0]    | List: 3    
+[7, 0]    | List: 7    
+[0, 1]    | List: 2    
+
+
+// << check
+
+// check >>
+
+MAP_v2__v2_L<v2>:
+pri-key   | pri-value  
+----------+------------
+[0, 0]    | List: 0    
+[1, 0]    | List: 3    
+[2, 0]    | List: 7    
+[3, 0]    | List: 14   
+[4, 0]    | List: 3    
+[5, 0]    | List: 7    
+[6, 0]    | List: 3    
+[7, 0]    | List: 7    
+[0, 1]    | List: 2    
+
+
+// << check
+
+// check >>
+
+MAP_v2__v2_L<v2>:
+pri-key   | pri-value  
+----------+------------
+[0, 0]    | List: 0    
+[1, 0]    | List: 3    
+[2, 0]    | List: 7    
+[3, 0]    | List: 14   
+[4, 0]    | List: 3    
+[5, 0]    | List: 7    
+[6, 0]    | List: 3    
+[7, 0]    | List: 7    
+[0, 1]    | List: 2    
+
+
+// << check
+
+// check >>
+
+MAP_v2__v2_L<v2>:
+pri-key   | pri-value  
+----------+------------
+[0, 0]    | List: 0    
+[1, 0]    | List: 3    
+[2, 0]    | List: 7    
+[3, 0]    | List: 14   
+[4, 0]    | List: 3    
+[5, 0]    | List: 7    
+[6, 0]    | List: 3    
+[7, 0]    | List: 7    
+[0, 1]    | List: 2    
+
+
+// << check
+
+// calculating---------------------------------------------------------------------------------------------------- >>
+
+n . . p k . . R 
+. . . . . . . . 
+. . . . . . . . 
+. . . . . . . . 
+. . . . . . . . 
+. . . . . . . . 
+P . . . . . . . 
+R N B Q K B N . 
+
+
+n2pk2R/8/8/8/8/8/P7/RNBQKBN1 b - - 0 1
+
+info string Available processors: 0-7
+info string Using 1 thread
+info string NNUE evaluation using nn-1c0000000000.nnue (133MiB, (22528, 3072, 15, 32, 1))
+info string NNUE evaluation using nn-37f18f62d772.nnue (6MiB, (22528, 128, 15, 32, 1))
+info depth 1 seldepth 3 multipv 1 score cp -1134 nodes 4 nps 4000 hashfull 0 tbhits 0 time 1 pv e8f7
+info depth 2 seldepth 3 multipv 1 score cp -1075 nodes 8 nps 8000 hashfull 0 tbhits 0 time 1 pv e8f7 d1d8
+info depth 3 seldepth 5 multipv 1 score cp -1134 nodes 20 nps 20000 hashfull 0 tbhits 0 time 1 pv e8f7 d1d8 a8b6
+info depth 4 seldepth 5 multipv 1 score cp -1074 nodes 27 nps 27000 hashfull 0 tbhits 0 time 1 pv e8f7 d1d8 a8b6 d8b6
+info depth 5 seldepth 8 multipv 1 score cp -1164 nodes 70 nps 70000 hashfull 0 tbhits 0 time 1 pv e8e7 d1d8 e7f7
+bestmove e8e7 ponder d1d8
+
+
+move: e8e7
+
+// << calculating----------------------------------------------------------------------------------------------------
+
+// check >>
+
+MAP_v2__v2_L<v2>:
+pri-key   | pri-value  
+----------+------------
+[0, 0]    | List: 0    
+[1, 0]    | List: 3    
+[2, 0]    | List: 7    
+[3, 0]    | List: 14   
+[4, 0]    | List: 3    
+[5, 0]    | List: 7    
+[6, 0]    | List: 3    
+[7, 0]    | List: 7    
+[0, 1]    | List: 2    
+
+
+// << check
+
+// calculating---------------------------------------------------------------------------------------------------- >>
+
+n . . p k . . . 
+. . . . . . . . 
+. . . . . . . . 
+. . . . . . . R 
+. . . . . . . . 
+. . . . . . . . 
+P . . . . . . . 
+R N B Q K B N . 
+
+
+n2pk3/8/8/7R/8/8/P7/RNBQKBN1 b - - 0 1
+
+info string Available processors: 0-7
+info string Using 1 thread
+info string NNUE evaluation using nn-1c0000000000.nnue (133MiB, (22528, 3072, 15, 32, 1))
+info string NNUE evaluation using nn-37f18f62d772.nnue (6MiB, (22528, 128, 15, 32, 1))
+info depth 1 seldepth 3 multipv 1 score cp -1168 nodes 8 nps 8000 hashfull 0 tbhits 0 time 1 pv e8f7
+info depth 2 seldepth 7 multipv 1 score cp -1149 nodes 71 nps 71000 hashfull 0 tbhits 0 time 1 pv a8b6 h5e5 e8f8
+info depth 3 seldepth 7 multipv 1 score cp -1159 nodes 96 nps 96000 hashfull 0 tbhits 0 time 1 pv a8b6 f1b5 e8f8
+info depth 4 seldepth 7 multipv 1 score cp -1148 nodes 122 nps 122000 hashfull 0 tbhits 0 time 1 pv a8b6 h5e5 e8f8
+info depth 5 seldepth 9 multipv 1 score cp -1139 nodes 206 nps 206000 hashfull 0 tbhits 0 time 1 pv e8f8 c1h6 f8g8 d1d8 g8h7
+bestmove e8f8 ponder c1h6
+
+
+move: e8f8
+
+// << calculating----------------------------------------------------------------------------------------------------
+
+// check >>
+
+MAP_v2__v2_L<v2>:
+pri-key   | pri-value  
+----------+------------
+[0, 0]    | List: 0    
+[1, 0]    | List: 3    
+[2, 0]    | List: 7    
+[3, 0]    | List: 14   
+[4, 0]    | List: 3    
+[5, 0]    | List: 7    
+[6, 0]    | List: 3    
+[7, 0]    | List: 7    
+[0, 1]    | List: 2    
+
+
+// << check
+
+// check >>
+
+MAP_v2__v2_L<v2>:
+pri-key   | pri-value  
+----------+------------
+[0, 0]    | List: 0    
+[1, 0]    | List: 3    
+[2, 0]    | List: 7    
+[3, 0]    | List: 14   
+[4, 0]    | List: 3    
+[5, 0]    | List: 7    
+[6, 0]    | List: 3    
+[7, 0]    | List: 7    
+[0, 1]    | List: 2    
+
+
+// << check
+
+// calculating---------------------------------------------------------------------------------------------------- >>
+
+n . . p k . . . 
+. . . . . . . . 
+. . . . . . . . 
+. . . . . . . . 
+. . . . . . . . 
+. . . . . N . . 
+P . . . . . . . 
+R N B Q K B . R 
+
+
+n2pk3/8/8/8/8/5N2/P7/RNBQKB1R b - - 0 1
+
+info string Available processors: 0-7
+info string Using 1 thread
+info string NNUE evaluation using nn-1c0000000000.nnue (133MiB, (22528, 3072, 15, 32, 1))
+info string NNUE evaluation using nn-37f18f62d772.nnue (6MiB, (22528, 128, 15, 32, 1))
+info depth 1 seldepth 5 multipv 1 score cp -1140 nodes 14 nps 14000 hashfull 0 tbhits 0 time 1 pv e8f8
+info depth 2 seldepth 5 multipv 1 score cp -1114 nodes 27 nps 27000 hashfull 0 tbhits 0 time 1 pv e8f8 c1a3 f8f7
+info depth 3 seldepth 7 multipv 1 score cp -1134 nodes 57 nps 57000 hashfull 0 tbhits 0 time 1 pv e8f8 c1h6 f8g8
+info depth 4 seldepth 9 multipv 1 score cp -1136 nodes 135 nps 135000 hashfull 0 tbhits 0 time 1 pv e8f8 c1h6 f8e8 f1b5 e8f7
+info depth 5 seldepth 7 multipv 1 score cp -1136 nodes 161 nps 161000 hashfull 0 tbhits 0 time 1 pv e8f8 c1h6 f8e8 f1b5 e8f7
+bestmove e8f8 ponder c1h6
+
+
+move: e8f8
+
+// << calculating----------------------------------------------------------------------------------------------------
+
+// check >>
+
+MAP_v2__v2_L<v2>:
+pri-key   | pri-value  
+----------+------------
+[0, 0]    | List: 0    
+[1, 0]    | List: 3    
+[2, 0]    | List: 7    
+[3, 0]    | List: 14   
+[4, 0]    | List: 3    
+[5, 0]    | List: 7    
+[6, 0]    | List: 3    
+[7, 0]    | List: 7    
+[0, 1]    | List: 2    
+
+
+// << check
+
+// check >>
+
+MAP_v2__v2_L<v2>:
+pri-key   | pri-value  
+----------+------------
+[0, 0]    | List: 0    
+[1, 0]    | List: 3    
+[2, 0]    | List: 7    
+[3, 0]    | List: 14   
+[4, 0]    | List: 3    
+[5, 0]    | List: 7    
+[6, 0]    | List: 3    
+[7, 0]    | List: 7    
+[0, 1]    | List: 2    
+
+
+// << check
+
+// calculating---------------------------------------------------------------------------------------------------- >>
+
+n . . p k . . . 
+. . . . . . . . 
+. . . . . . . . 
+. . . . . . . . 
+. . . . . . . R 
+. . . . . . . . 
+P . . . . . . . 
+R N B Q K B N . 
+
+
+n2pk3/8/8/8/7R/8/P7/RNBQKBN1 b - - 0 1
+
+info string Available processors: 0-7
+info string Using 1 thread
+info string NNUE evaluation using nn-1c0000000000.nnue (133MiB, (22528, 3072, 15, 32, 1))
+info string NNUE evaluation using nn-37f18f62d772.nnue (6MiB, (22528, 128, 15, 32, 1))
+info depth 1 seldepth 5 multipv 1 score cp -1162 nodes 12 nps 12000 hashfull 0 tbhits 0 time 1 pv e8f8
+info depth 2 seldepth 5 multipv 1 score cp -1151 nodes 25 nps 25000 hashfull 0 tbhits 0 time 1 pv e8f8 c1a3 f8g7
+info depth 3 seldepth 7 multipv 1 score cp -1141 nodes 62 nps 62000 hashfull 0 tbhits 0 time 1 pv e8f8 d1d8 f8g7
+info depth 4 seldepth 7 multipv 1 score cp -1141 nodes 87 nps 87000 hashfull 0 tbhits 0 time 1 pv e8f8 d1d8 f8f7 f1c4 f7g7
+info depth 5 seldepth 7 multipv 1 score cp -1177 nodes 155 nps 77500 hashfull 0 tbhits 0 time 2 pv d8d7 d1h5 e8d8
+bestmove d8d7 ponder d1h5
+
+
+move: d8d7
+
+// << calculating----------------------------------------------------------------------------------------------------
+
+// check >>
+
+MAP_v2__v2_L<v2>:
+pri-key   | pri-value  
+----------+------------
+[0, 0]    | List: 0    
+[1, 0]    | List: 3    
+[2, 0]    | List: 7    
+[3, 0]    | List: 14   
+[4, 0]    | List: 3    
+[5, 0]    | List: 7    
+[6, 0]    | List: 3    
+[7, 0]    | List: 7    
+[0, 1]    | List: 2    
+
+
+// << check
+
+// calculating---------------------------------------------------------------------------------------------------- >>
+
+n . . p k . . . 
+. . . . . . . . 
+. . . . . . . . 
+. . . . . . . . 
+. . . . . . . . 
+. . . . . N . . 
+P . . . . . . . 
+R N B Q K B . R 
+
+
+n2pk3/8/8/8/8/5N2/P7/RNBQKB1R b - - 0 1
+
+info string Available processors: 0-7
+info string Using 1 thread
+info string NNUE evaluation using nn-1c0000000000.nnue (133MiB, (22528, 3072, 15, 32, 1))
+info string NNUE evaluation using nn-37f18f62d772.nnue (6MiB, (22528, 128, 15, 32, 1))
+info depth 1 seldepth 5 multipv 1 score cp -1140 nodes 14 nps 14000 hashfull 0 tbhits 0 time 1 pv e8f8
+info depth 2 seldepth 5 multipv 1 score cp -1114 nodes 27 nps 27000 hashfull 0 tbhits 0 time 1 pv e8f8 c1a3 f8f7
+info depth 3 seldepth 7 multipv 1 score cp -1134 nodes 57 nps 57000 hashfull 0 tbhits 0 time 1 pv e8f8 c1h6 f8g8
+info depth 4 seldepth 9 multipv 1 score cp -1136 nodes 135 nps 135000 hashfull 0 tbhits 0 time 1 pv e8f8 c1h6 f8e8 f1b5 e8f7
+info depth 5 seldepth 7 multipv 1 score cp -1136 nodes 161 nps 161000 hashfull 0 tbhits 0 time 1 pv e8f8 c1h6 f8e8 f1b5 e8f7
+bestmove e8f8 ponder c1h6
+
+
+move: e8f8
+
+// << calculating----------------------------------------------------------------------------------------------------
+
+// check >>
+
+MAP_v2__v2_L<v2>:
+pri-key   | pri-value  
+----------+------------
+[0, 0]    | List: 0    
+[1, 0]    | List: 3    
+[2, 0]    | List: 7    
+[3, 0]    | List: 11   
+[4, 0]    | List: 3    
+[5, 0]    | List: 7    
+[7, 0]    | List: 8    
+[0, 1]    | List: 2    
+[5, 2]    | List: 7    
+
+
+// << check
+
+// calculating---------------------------------------------------------------------------------------------------- >>
+
+n . . p . k . . 
+. . . . . . . . 
+. . . . . . . . 
+. . . . . . N . 
+. . . . . . . . 
+. . . . . . . . 
+P . . . . . . . 
+R N B Q K B . R 
+
+
+n2p1k2/8/8/6N1/8/8/P7/RNBQKB1R b - - 0 1
+
+info string Available processors: 0-7
+info string Using 1 thread
+info string NNUE evaluation using nn-1c0000000000.nnue (133MiB, (22528, 3072, 15, 32, 1))
+info string NNUE evaluation using nn-37f18f62d772.nnue (6MiB, (22528, 128, 15, 32, 1))
+info depth 1 seldepth 4 multipv 1 score cp -1126 nodes 12 nps 12000 hashfull 0 tbhits 0 time 1 pv a8c7
+info depth 2 seldepth 4 multipv 1 score cp -1078 nodes 21 nps 21000 hashfull 0 tbhits 0 time 1 pv a8c7 d1d8 c7e8
+info depth 3 seldepth 5 multipv 1 score cp -1113 nodes 37 nps 37000 hashfull 0 tbhits 0 time 1 pv a8c7 g5h7 f8f7
+info depth 4 seldepth 9 multipv 1 score cp -1078 nodes 104 nps 104000 hashfull 0 tbhits 0 time 1 pv a8c7 d1d8 c7e8
+info depth 5 seldepth 8 multipv 1 score cp -1099 nodes 153 nps 153000 hashfull 0 tbhits 0 time 1 pv d8d7 g5h7 f8f7 d1d7 f7g8
+bestmove d8d7 ponder g5h7
+
+
+move: d8d7
+
+// << calculating----------------------------------------------------------------------------------------------------
+
+// check >>
+
+MAP_v2__v2_L<v2>:
+pri-key   | pri-value  
+----------+------------
+[0, 0]    | List: 0    
+[1, 0]    | List: 3    
+[2, 0]    | List: 5    
+[3, 0]    | List: 13   
+[4, 0]    | List: 3    
+[5, 0]    | List: 7    
+[7, 0]    | List: 8    
+[0, 1]    | List: 2    
+[6, 4]    | List: 6    
+
+
+// << check
+
+// calculating---------------------------------------------------------------------------------------------------- >>
+
+n . . . . k . . 
+. . . p . . . . 
+. . . . N . . . 
+. . . . . . . . 
+. . . . . . . . 
+. . . . . . . . 
+P . . . . . . . 
+R N B Q K B . R 
+
+
+n4k2/3p4/4N3/8/8/8/P7/RNBQKB1R b - - 0 1
+
+info string Available processors: 0-7
+info string Using 1 thread
+info string NNUE evaluation using nn-1c0000000000.nnue (133MiB, (22528, 3072, 15, 32, 1))
+info string NNUE evaluation using nn-37f18f62d772.nnue (6MiB, (22528, 128, 15, 32, 1))
+info depth 1 seldepth 2 multipv 1 score cp -1070 nodes 5 nps 5000 hashfull 0 tbhits 0 time 1 pv d7e6
+info depth 2 seldepth 6 multipv 1 score cp -1099 nodes 23 nps 23000 hashfull 0 tbhits 0 time 1 pv d7e6 d1f3 f8e8 f3a8 e8d7
+info depth 3 seldepth 6 multipv 1 score cp -1041 nodes 50 nps 50000 hashfull 0 tbhits 0 time 1 pv d7e6 d1f3 f8g8 f3a8 g8f7
+info depth 4 seldepth 7 multipv 1 score cp -1099 nodes 95 nps 95000 hashfull 0 tbhits 0 time 1 pv d7e6 d1f3 f8e8 f3a8 e8d7
+info depth 5 seldepth 8 multipv 1 score cp -1050 nodes 125 nps 125000 hashfull 0 tbhits 0 time 1 pv d7e6 d1f3 f8e8 f1b5 e8d8
+bestmove d7e6 ponder d1f3
+
+
+move: d7e6
+
+// << calculating----------------------------------------------------------------------------------------------------
+
+// check >>
+
+MAP_v2__v2_L<v2>:
+pri-key   | pri-value  
+----------+------------
+[0, 0]    | List: 0    
+[1, 0]    | List: 3    
+[2, 0]    | List: 7    
+[3, 0]    | List: 14   
+[4, 0]    | List: 3    
+[5, 0]    | List: 7    
+[7, 0]    | List: 8    
+[0, 1]    | List: 2    
+
+
+// << check
+
+// calculating---------------------------------------------------------------------------------------------------- >>
+
+n . . . . k . R 
+. . . . . . . . 
+. . . . p . . . 
+. . . . . . . . 
+. . . . . . . . 
+. . . . . . . . 
+P . . . . . . . 
+R N B Q K B . . 
+
+
+n4k1R/8/4p3/8/8/8/P7/RNBQKB2 b - - 0 1
+
+info string Available processors: 0-7
+info string Using 1 thread
+info string NNUE evaluation using nn-1c0000000000.nnue (133MiB, (22528, 3072, 15, 32, 1))
+info string NNUE evaluation using nn-37f18f62d772.nnue (6MiB, (22528, 128, 15, 32, 1))
+info depth 1 seldepth 3 multipv 1 score cp -974 nodes 6 nps 6000 hashfull 0 tbhits 0 time 1 pv f8g7 h8a8
+info depth 2 seldepth 3 multipv 1 score cp -974 nodes 10 nps 10000 hashfull 0 tbhits 0 time 1 pv f8g7 h8a8
+info depth 3 seldepth 4 multipv 1 score cp -1026 nodes 27 nps 27000 hashfull 0 tbhits 0 time 1 pv f8e7
+info depth 4 seldepth 8 multipv 1 score cp -989 nodes 86 nps 86000 hashfull 0 tbhits 0 time 1 pv f8g7 h8a8
+info depth 5 seldepth 6 multipv 1 score cp -1072 nodes 137 nps 137000 hashfull 0 tbhits 0 time 1 pv f8f7 h8a8 f7e7
+bestmove f8f7 ponder h8a8
+
+
+move: f8f7
+
+// << calculating----------------------------------------------------------------------------------------------------
+
+// check >>
+
+MAP_v2__v2_L<v2>:
+pri-key   | pri-value  
+----------+------------
+[0, 0]    | List: 0    
+[1, 0]    | List: 3    
+[2, 0]    | List: 7    
+[3, 0]    | List: 14   
+[4, 0]    | List: 3    
+[5, 0]    | List: 7    
+[0, 1]    | List: 2    
+[7, 7]    | List: 14   
+
+
+// << check
+
+// calculating---------------------------------------------------------------------------------------------------- >>
+
+n . . . . . . R 
+. . . . . k . . 
+. . . . p . . . 
+. . . . . . . . 
+P . . . . . . . 
+. . . . . . . . 
+. . . . . . . . 
+R N B Q K B . . 
+
+
+n6R/5k2/4p3/8/P7/8/8/RNBQKB2 b - - 0 1
+
+info string Available processors: 0-7
+info string Using 1 thread
+info string NNUE evaluation using nn-1c0000000000.nnue (133MiB, (22528, 3072, 15, 32, 1))
+info string NNUE evaluation using nn-37f18f62d772.nnue (6MiB, (22528, 128, 15, 32, 1))
+info depth 1 seldepth 3 multipv 1 score cp -998 nodes 10 nps 10000 hashfull 0 tbhits 0 time 1 pv f7g7 h8a8
+info depth 2 seldepth 3 multipv 1 score cp -999 nodes 27 nps 27000 hashfull 0 tbhits 0 time 1 pv f7g7 h8a8
+info depth 3 seldepth 4 multipv 1 score cp -1014 nodes 43 nps 43000 hashfull 0 tbhits 0 time 1 pv e6e5
+info depth 4 seldepth 6 multipv 1 score cp -1005 nodes 76 nps 76000 hashfull 0 tbhits 0 time 1 pv f7g7 h8a8
+info depth 5 seldepth 6 multipv 1 score cp -1030 nodes 119 nps 119000 hashfull 0 tbhits 0 time 1 pv f7e7
+bestmove f7e7 ponder h8h7
+
+
+move: f7e7
+
+// << calculating----------------------------------------------------------------------------------------------------
+
+// check >>
+
+MAP_v2__v2_L<v2>:
+pri-key   | pri-value  
+----------+------------
+[0, 0]    | List: 2    
+[1, 0]    | List: 3    
+[2, 0]    | List: 7    
+[3, 0]    | List: 13   
+[4, 0]    | List: 3    
+[5, 0]    | List: 7    
+[0, 3]    | List: 1    
+[7, 7]    | List: 14   
+
+
+// << check
+
+// calculating---------------------------------------------------------------------------------------------------- >>
+
+n . . . . . . R 
+. . . . k . . . 
+. . . . p . . . 
+. . . . . . . . 
+P . . . . . . . 
+. . . . . . . . 
+R . . . . . . . 
+. N B Q K B . . 
+
+
+n6R/4k3/4p3/8/P7/8/R7/1NBQKB2 b - - 0 1
+
+info string Available processors: 0-7
+info string Using 1 thread
+info string NNUE evaluation using nn-1c0000000000.nnue (133MiB, (22528, 3072, 15, 32, 1))
+info string NNUE evaluation using nn-37f18f62d772.nnue (6MiB, (22528, 128, 15, 32, 1))
+info depth 1 seldepth 3 multipv 1 score cp -1016 nodes 6 nps 6000 hashfull 0 tbhits 0 time 1 pv a8b6
+info depth 2 seldepth 4 multipv 1 score cp -1029 nodes 15 nps 15000 hashfull 0 tbhits 0 time 1 pv a8b6 h8h7 e7e8
+info depth 3 seldepth 5 multipv 1 score cp -1025 nodes 28 nps 28000 hashfull 0 tbhits 0 time 1 pv a8c7
+info depth 4 seldepth 7 multipv 1 score cp -1042 nodes 51 nps 51000 hashfull 0 tbhits 0 time 1 pv e6e5 h8a8
+info depth 5 seldepth 6 multipv 1 score cp -1055 nodes 99 nps 99000 hashfull 0 tbhits 0 time 1 pv a8b6 h8h7 e7e8
+bestmove a8b6 ponder h8h7
+
+
+move: a8b6
+
+// << calculating----------------------------------------------------------------------------------------------------
+
+// check >>
+
+MAP_v2__v2_L<v2>:
+pri-key   | pri-value  
+----------+------------
+[1, 0]    | List: 3    
+[2, 0]    | List: 7    
+[3, 0]    | List: 13   
+[4, 0]    | List: 3    
+[5, 0]    | List: 7    
+[0, 1]    | List: 9    
+[0, 3]    | List: 1    
+[7, 7]    | List: 14   
+
+
+// << check
+
+// check >>
+
+MAP_v2__v2_L<v2>:
+pri-key   | pri-value  
+----------+------------
+[1, 0]    | List: 3    
+[2, 0]    | List: 7    
+[3, 0]    | List: 11   
+[4, 0]    | List: 3    
+[5, 0]    | List: 7    
+[2, 1]    | List: 13   
+[0, 3]    | List: 1    
+[7, 7]    | List: 14   
+
+
+// << check
+
+// calculating---------------------------------------------------------------------------------------------------- >>
+
+. . . . . . . R 
+. . . . k . . . 
+. n . . p . . . 
+. . . . . . . . 
+P . . . . . . . 
+. . . . . . . . 
+. . R . . . . . 
+. N B Q K B . . 
+
+
+7R/4k3/1n2p3/8/P7/8/2R5/1NBQKB2 b - - 0 1
+
+info string Available processors: 0-7
+info string Using 1 thread
+info string NNUE evaluation using nn-1c0000000000.nnue (133MiB, (22528, 3072, 15, 32, 1))
+info string NNUE evaluation using nn-37f18f62d772.nnue (6MiB, (22528, 128, 15, 32, 1))
+info depth 1 seldepth 2 multipv 1 score cp -1047 nodes 9 nps 9000 hashfull 0 tbhits 0 time 1 pv b6d7
+info depth 2 seldepth 7 multipv 1 score cp -1080 nodes 50 nps 50000 hashfull 0 tbhits 0 time 1 pv b6a4 h8h7 e7e8
+info depth 3 seldepth 5 multipv 1 score cp -1067 nodes 66 nps 66000 hashfull 0 tbhits 0 time 1 pv e6e5
+info depth 4 seldepth 6 multipv 1 score cp -1092 nodes 113 nps 113000 hashfull 0 tbhits 0 time 1 pv b6a4 c2c7 e7f6
+info depth 5 seldepth 7 multipv 1 score cp -1084 nodes 210 nps 210000 hashfull 0 tbhits 0 time 1 pv b6c4
+bestmove b6c4 ponder h8h7
+
+
+move: b6c4
+
+// << calculating----------------------------------------------------------------------------------------------------
+
+// check >>
+
+MAP_v2__v2_L<v2>:
+pri-key   | pri-value  
+----------+------------
+[1, 0]    | List: 3    
+[2, 0]    | List: 7    
+[3, 0]    | List: 11   
+[4, 0]    | List: 2    
+[5, 0]    | List: 5    
+[2, 1]    | List: 9    
+[0, 3]    | List: 1    
+[7, 7]    | List: 14   
+
+
+// << check
+
+// calculating---------------------------------------------------------------------------------------------------- >>
+
+. . . . . . . R 
+. . . . k . . . 
+. . . . p . . . 
+. . . . . . . . 
+P . R . . . . . 
+. . . . . . . . 
+. . . . . . . . 
+. N B Q K B . . 
+
+
+7R/4k3/4p3/8/P1R5/8/8/1NBQKB2 b - - 0 1
+
+info string Available processors: 0-7
+info string Using 1 thread
+info string NNUE evaluation using nn-1c0000000000.nnue (133MiB, (22528, 3072, 15, 32, 1))
+info string NNUE evaluation using nn-37f18f62d772.nnue (6MiB, (22528, 128, 15, 32, 1))
+info depth 1 seldepth 2 multipv 1 score cp -1162 nodes 3 nps 3000 hashfull 0 tbhits 0 time 1 pv e6e5
+info depth 2 seldepth 4 multipv 1 score cp -1111 nodes 18 nps 18000 hashfull 0 tbhits 0 time 1 pv e7f7 h8h7 f7g8
+info depth 3 seldepth 4 multipv 1 score cp -1164 nodes 35 nps 35000 hashfull 0 tbhits 0 time 1 pv e7f7 c4c7 f7g6
+info depth 4 seldepth 6 multipv 1 score cp -1244 nodes 54 nps 54000 hashfull 0 tbhits 0 time 1 pv e6e5 c4c7 e7e6
+info depth 5 seldepth 6 multipv 1 score cp -1164 nodes 168 nps 168000 hashfull 0 tbhits 0 time 1 pv e7f6 c1b2 f6e7
+bestmove e7f6 ponder c1b2
+
+
+move: e7f6
+
+// << calculating----------------------------------------------------------------------------------------------------
+
+// check >>
+
+MAP_v2__v2_L<v2>:
+pri-key   | pri-value  
+----------+------------
+[1, 0]    | List: 3    
+[2, 0]    | List: 7    
+[3, 0]    | List: 13   
+[4, 0]    | List: 3    
+[5, 0]    | List: 4    
+[0, 3]    | List: 1    
+[2, 3]    | List: 12   
+[7, 7]    | List: 14   
+
+
+// << check
+
+// calculating---------------------------------------------------------------------------------------------------- >>
+
+. . . . . . . R 
+. . . . . . . . 
+. . R . p k . . 
+. . . . . . . . 
+P . . . . . . . 
+. . . . . . . . 
+. . . . . . . . 
+. N B Q K B . . 
+
+
+7R/8/2R1pk2/8/P7/8/8/1NBQKB2 b - - 0 1
+
+info string Available processors: 0-7
+info string Using 1 thread
+info string NNUE evaluation using nn-1c0000000000.nnue (133MiB, (22528, 3072, 15, 32, 1))
+info string NNUE evaluation using nn-37f18f62d772.nnue (6MiB, (22528, 128, 15, 32, 1))
+info depth 1 seldepth 3 multipv 1 score cp -997 nodes 7 nps 7000 hashfull 0 tbhits 0 time 1 pv f6g7
+info depth 2 seldepth 4 multipv 1 score cp -950 nodes 15 nps 15000 hashfull 0 tbhits 0 time 1 pv f6g7 c6e6
+info depth 3 seldepth 4 multipv 1 score cp -1020 nodes 26 nps 26000 hashfull 0 tbhits 0 time 1 pv f6g7 c6e6 g7f7
+info depth 4 seldepth 6 multipv 1 score cp -1085 nodes 69 nps 69000 hashfull 0 tbhits 0 time 1 pv f6g7 c6e6 g7h8 c1b2 h8h7
+info depth 5 seldepth 6 multipv 1 score cp -1095 nodes 124 nps 124000 hashfull 0 tbhits 0 time 1 pv f6g7 c1b2 e6e5 b2e5 g7f7
+bestmove f6g7 ponder c1b2
+
+
+move: f6g7
+
+// << calculating----------------------------------------------------------------------------------------------------
+
+// check >>
+
+MAP_v2__v2_L<v2>:
+pri-key   | pri-value  
+----------+------------
+[1, 0]    | List: 3    
+[2, 0]    | List: 7    
+[3, 0]    | List: 13   
+[4, 0]    | List: 3    
+[5, 0]    | List: 7    
+[0, 3]    | List: 1    
+[2, 5]    | List: 10   
+[7, 7]    | List: 14   
+
+
+// << check
+
+// check >>
+
+MAP_v2__v2_L<v2>:
+pri-key   | pri-value  
+----------+------------
+[1, 0]    | List: 2    
+[2, 0]    | List: 7    
+[3, 0]    | List: 13   
+[4, 0]    | List: 3    
+[5, 0]    | List: 7    
+[2, 2]    | List: 13   
+[0, 3]    | List: 1    
+[7, 7]    | List: 14   
+
+
+// << check
+
+// calculating---------------------------------------------------------------------------------------------------- >>
+
+. . . . . . . R 
+. . . . . . k . 
+. . . . p . . . 
+. . . . . . . . 
+P . . . . . . . 
+. . R . . . . . 
+. . . . . . . . 
+. N B Q K B . . 
+
+
+7R/6k1/4p3/8/P7/2R5/8/1NBQKB2 b - - 0 1
+
+info string Available processors: 0-7
+info string Using 1 thread
+info string NNUE evaluation using nn-1c0000000000.nnue (133MiB, (22528, 3072, 15, 32, 1))
+info string NNUE evaluation using nn-37f18f62d772.nnue (6MiB, (22528, 128, 15, 32, 1))
+info depth 1 seldepth 2 multipv 1 score cp -1032 nodes 5 nps 5000 hashfull 0 tbhits 0 time 1 pv e6e5
+info depth 2 seldepth 4 multipv 1 score cp -1034 nodes 20 nps 20000 hashfull 0 tbhits 0 time 1 pv e6e5 c3g3 g7h8
+info depth 3 seldepth 4 multipv 1 score cp -1034 nodes 35 nps 35000 hashfull 0 tbhits 0 time 1 pv e6e5 c3g3 g7h8
+info depth 4 seldepth 8 multipv 1 score cp -1071 nodes 78 nps 78000 hashfull 0 tbhits 0 time 1 pv g7h8 c3h3 h8g7
+info depth 5 seldepth 6 multipv 1 score cp -1054 nodes 125 nps 125000 hashfull 0 tbhits 0 time 1 pv g7h8 d1d8 h8g7
+bestmove g7h8 ponder d1d8
+
+
+move: g7h8
+
+// << calculating----------------------------------------------------------------------------------------------------
+
+// check >>
+
+MAP_v2__v2_L<v2>:
+pri-key   | pri-value  
+----------+------------
+[1, 0]    | List: 2    
+[2, 0]    | List: 7    
+[3, 0]    | List: 13   
+[4, 0]    | List: 3    
+[5, 0]    | List: 7    
+[2, 2]    | List: 13   
+[0, 3]    | List: 1    
+
+
+// << check
+
+// calculating---------------------------------------------------------------------------------------------------- >>
+
+. . . . . . . k 
+. . R . . . . . 
+. . . . p . . . 
+. . . . . . . . 
+P . . . . . . . 
+. . . . . . . . 
+. . . . . . . . 
+. N B Q K B . . 
+
+
+7k/2R5/4p3/8/P7/8/8/1NBQKB2 b - - 0 1
+
+info string Available processors: 0-7
+info string Using 1 thread
+info string NNUE evaluation using nn-1c0000000000.nnue (133MiB, (22528, 3072, 15, 32, 1))
+info string NNUE evaluation using nn-37f18f62d772.nnue (6MiB, (22528, 128, 15, 32, 1))
+info depth 1 seldepth 2 multipv 1 score cp -1007 nodes 2 nps 2000 hashfull 0 tbhits 0 time 1 pv e6e5
+info depth 2 seldepth 3 multipv 1 score mate -1 nodes 9 nps 9000 hashfull 0 tbhits 0 time 1 pv e6e5 d1d8
+info depth 3 seldepth 3 multipv 1 score mate -1 nodes 12 nps 12000 hashfull 0 tbhits 0 time 1 pv e6e5 d1d8
+info depth 4 seldepth 3 multipv 1 score mate -1 nodes 15 nps 15000 hashfull 0 tbhits 0 time 1 pv e6e5 d1d8
+info depth 5 seldepth 3 multipv 1 score mate -1 nodes 19 nps 19000 hashfull 0 tbhits 0 time 1 pv e6e5 d1d8
+bestmove e6e5 ponder d1d8
+
+
+move: e6e5
+
+// << calculating----------------------------------------------------------------------------------------------------
+
+// check >>
+
+MAP_v2__v2_L<v2>:
+pri-key   | pri-value  
+----------+------------
+[1, 0]    | List: 3    
+[2, 0]    | List: 7    
+[3, 0]    | List: 13   
+[4, 0]    | List: 3    
+[5, 0]    | List: 7    
+[0, 3]    | List: 1    
+[2, 6]    | List: 13   
+
+
+// << check
+
+// calculating---------------------------------------------------------------------------------------------------- >>
+
+. . . Q . . . k 
+. . R . . . . . 
+. . . . . . . . 
+. . . . p . . . 
+P . . . . . . . 
+. . . . . . . . 
+. . . . . . . . 
+. N B . K B . . 
+
+
+3Q3k/2R5/8/4p3/P7/8/8/1NB1KB2 b - - 0 1
+
+info string Available processors: 0-7
+info string Using 1 thread
+info string NNUE evaluation using nn-1c0000000000.nnue (133MiB, (22528, 3072, 15, 32, 1))
+info string NNUE evaluation using nn-37f18f62d772.nnue (6MiB, (22528, 128, 15, 32, 1))
+info depth 0 score mate 0
+bestmove (none)
+
+
+move: (none)
+
+// << calculating----------------------------------------------------------------------------------------------------
+
+// check >>
+
+MAP_v2__v2_L<v2>:
+pri-key   | pri-value  
+----------+------------
+[0, 0]    | List: 0    
+[1, 0]    | List: 3    
+[2, 0]    | List: 7    
+[3, 0]    | List: 14   
+[4, 0]    | List: 3    
+[5, 0]    | List: 7    
+[6, 0]    | List: 3    
+[7, 0]    | List: 7    
+[0, 1]    | List: 2    
+
+
+// << check
+
+// calculating---------------------------------------------------------------------------------------------------- >>
+
+n . . Q k . . . 
+. . . . . . . . 
+. . . . . . . . 
+. . . . . . . . 
+. . . . . . . . 
+. . . . . . . . 
+P . . . . . . . 
+R N B . K B N R 
+
+
+n2Qk3/8/8/8/8/8/P7/RNB1KBNR b - - 0 1
+
+info string Available processors: 0-7
+info string Using 1 thread
+info string NNUE evaluation using nn-1c0000000000.nnue (133MiB, (22528, 3072, 15, 32, 1))
+info string NNUE evaluation using nn-37f18f62d772.nnue (6MiB, (22528, 128, 15, 32, 1))
+info depth 1 seldepth 2 multipv 1 score cp -867 nodes 2 nps 2000 hashfull 0 tbhits 0 time 1 pv e8d8
+info depth 2 seldepth 5 multipv 1 score cp -868 nodes 11 nps 11000 hashfull 0 tbhits 0 time 1 pv e8d8 h1h8 d8c7 h8a8
+info depth 3 seldepth 5 multipv 1 score cp -868 nodes 22 nps 22000 hashfull 0 tbhits 0 time 1 pv e8d8 h1h8 d8c7 h8a8
+info depth 4 seldepth 7 multipv 1 score cp -879 nodes 51 nps 51000 hashfull 0 tbhits 0 time 1 pv e8d8 h1h8 d8d7 h8a8
+info depth 5 seldepth 6 multipv 1 score cp -899 nodes 68 nps 68000 hashfull 0 tbhits 0 time 1 pv e8d8 h1h8 d8d7 h8a8 d7e7
+bestmove e8d8 ponder h1h8
+
+
+move: e8d8
+
+// << calculating----------------------------------------------------------------------------------------------------
+
+// check >>
+
+MAP_v2__v2_L<v2>:
+pri-key   | pri-value  
+----------+------------
+[0, 0]    | List: 0    
+[1, 0]    | List: 3    
+[2, 0]    | List: 7    
+[4, 0]    | List: 4    
+[5, 0]    | List: 7    
+[6, 0]    | List: 3    
+[7, 0]    | List: 7    
+[0, 1]    | List: 2    
+
+
+// << check
+
+// calculating---------------------------------------------------------------------------------------------------- >>
+
+n . . k . . . . 
+. . . . . . . . 
+. . . . . . . . 
+. . . . . . . . 
+P . . . . . . . 
+. . . . . . . . 
+. . . . . . . . 
+R N B . K B N R 
+
+
+n2k4/8/8/8/P7/8/8/RNB1KBNR b - - 0 1
+
+info string Available processors: 0-7
+info string Using 1 thread
+info string NNUE evaluation using nn-1c0000000000.nnue (133MiB, (22528, 3072, 15, 32, 1))
+info string NNUE evaluation using nn-37f18f62d772.nnue (6MiB, (22528, 128, 15, 32, 1))
+info depth 1 seldepth 2 multipv 1 score cp -827 nodes 7 nps 7000 hashfull 0 tbhits 0 time 1 pv d8c8
+info depth 2 seldepth 4 multipv 1 score cp -836 nodes 35 nps 35000 hashfull 0 tbhits 0 time 1 pv a8b6 c1g5 d8c7
+info depth 3 seldepth 4 multipv 1 score cp -829 nodes 54 nps 54000 hashfull 0 tbhits 0 time 1 pv a8b6 h1h8 d8d7
+info depth 4 seldepth 6 multipv 1 score cp -849 nodes 88 nps 88000 hashfull 0 tbhits 0 time 1 pv a8c7
+info depth 5 seldepth 8 multipv 1 score cp -859 nodes 114 nps 114000 hashfull 0 tbhits 0 time 1 pv a8b6 h1h8 d8d7
+bestmove a8b6 ponder h1h8
+
+
+move: a8b6
+
+// << calculating----------------------------------------------------------------------------------------------------
+
+// check >>
+
+MAP_v2__v2_L<v2>:
+pri-key   | pri-value  
+----------+------------
+[0, 0]    | List: 2    
+[1, 0]    | List: 3    
+[2, 0]    | List: 7    
+[4, 0]    | List: 4    
+[5, 0]    | List: 7    
+[6, 0]    | List: 3    
+[7, 0]    | List: 7    
+[0, 3]    | List: 1    
+
+
+// << check
+
+// check >>
+
+MAP_v2__v2_L<v2>:
+pri-key   | pri-value  
+----------+------------
+[1, 0]    | List: 2    
+[2, 0]    | List: 6    
+[4, 0]    | List: 4    
+[5, 0]    | List: 7    
+[6, 0]    | List: 3    
+[7, 0]    | List: 7    
+[0, 2]    | List: 9    
+[0, 3]    | List: 1    
+
+
+// << check
+
+// calculating---------------------------------------------------------------------------------------------------- >>
+
+. . . k . . . . 
+. . . . . . . . 
+. n . . . . . . 
+. . . . . . . . 
+P . . . . . . . 
+R . . . . . . . 
+. . . . . . . . 
+. N B . K B N R 
+
+
+3k4/8/1n6/8/P7/R7/8/1NB1KBNR b - - 0 1
+
+info string Available processors: 0-7
+info string Using 1 thread
+info string NNUE evaluation using nn-1c0000000000.nnue (133MiB, (22528, 3072, 15, 32, 1))
+info string NNUE evaluation using nn-37f18f62d772.nnue (6MiB, (22528, 128, 15, 32, 1))
+info depth 1 seldepth 3 multipv 1 score cp -873 nodes 12 nps 12000 hashfull 0 tbhits 0 time 1 pv b6a4
+info depth 2 seldepth 6 multipv 1 score cp -880 nodes 51 nps 51000 hashfull 0 tbhits 0 time 1 pv d8c8 h1h8 c8b7
+info depth 3 seldepth 4 multipv 1 score cp -889 nodes 75 nps 75000 hashfull 0 tbhits 0 time 1 pv d8c8 a3c3 c8b7
+info depth 4 seldepth 8 multipv 1 score cp -896 nodes 132 nps 132000 hashfull 0 tbhits 0 time 1 pv b6c4
+info depth 5 seldepth 7 multipv 1 score cp -911 nodes 177 nps 177000 hashfull 0 tbhits 0 time 1 pv b6c4 a3d3 c4d6 h1h7 d8c8 d3d6
+bestmove b6c4 ponder a3d3
+
+
+move: b6c4
+
+// << calculating----------------------------------------------------------------------------------------------------
+
+// check >>
+
+MAP_v2__v2_L<v2>:
+pri-key   | pri-value  
+----------+------------
+[1, 0]    | List: 2    
+[2, 0]    | List: 6    
+[4, 0]    | List: 3    
+[5, 0]    | List: 5    
+[6, 0]    | List: 3    
+[7, 0]    | List: 7    
+[0, 2]    | List: 9    
+[0, 3]    | List: 1    
+
+
+// << check
+
+// calculating---------------------------------------------------------------------------------------------------- >>
+
+. . . k . . . . 
+. . . . . . . . 
+. . . . . . . . 
+. . . . . . . . 
+P . n . . . . . 
+. . R . . . . . 
+. . . . . . . . 
+. N B . K B N R 
+
+
+3k4/8/8/8/P1n5/2R5/8/1NB1KBNR b - - 0 1
+
+info string Available processors: 0-7
+info string Using 1 thread
+info string NNUE evaluation using nn-1c0000000000.nnue (133MiB, (22528, 3072, 15, 32, 1))
+info string NNUE evaluation using nn-37f18f62d772.nnue (6MiB, (22528, 128, 15, 32, 1))
+info depth 1 seldepth 3 multipv 1 score cp -901 nodes 19 nps 19000 hashfull 0 tbhits 0 time 1 pv c4d6
+info depth 2 seldepth 4 multipv 1 score cp -901 nodes 45 nps 45000 hashfull 0 tbhits 0 time 1 pv c4b2 h1h7 b2a4
+info depth 3 seldepth 4 multipv 1 score cp -901 nodes 61 nps 61000 hashfull 0 tbhits 0 time 1 pv c4b2 h1h7 b2a4
+info depth 4 seldepth 6 multipv 1 score cp -889 nodes 81 nps 81000 hashfull 0 tbhits 0 time 1 pv c4b2 h1h7 b2a4 c3d3 d8c8
+info depth 5 seldepth 6 multipv 1 score cp -882 nodes 107 nps 107000 hashfull 0 tbhits 0 time 1 pv c4b2 h1h7 b2a4 c3d3 d8e8
+bestmove c4b2 ponder h1h7
+
+
+move: c4b2
+
+// << calculating----------------------------------------------------------------------------------------------------
+
+// check >>
+
+MAP_v2__v2_L<v2>:
+pri-key   | pri-value  
+----------+------------
+[1, 0]    | List: 2    
+[2, 0]    | List: 6    
+[4, 0]    | List: 3    
+[5, 0]    | List: 7    
+[6, 0]    | List: 3    
+[7, 0]    | List: 7    
+[2, 2]    | List: 13   
+[0, 3]    | List: 1    
+
+
+// << check
+
+// check >>
+
+MAP_v2__v2_L<v2>:
+pri-key   | pri-value  
+----------+------------
+[1, 0]    | List: 2    
+[2, 0]    | List: 6    
+[4, 0]    | List: 3    
+[5, 0]    | List: 7    
+[6, 0]    | List: 3    
+[7, 0]    | List: 7    
+[2, 2]    | List: 13   
+[0, 3]    | List: 1    
+
+
+// << check
+
+// calculating---------------------------------------------------------------------------------------------------- >>
+
+. . . k . . . . 
+. . . . . . . . 
+. . . . . . . . 
+. . . . . . . . 
+P . . . . . . . 
+. . R . . . . . 
+. B . . . . . . 
+. N . . K B N R 
+
+
+3k4/8/8/8/P7/2R5/1B6/1N2KBNR b - - 0 1
+
+info string Available processors: 0-7
+info string Using 1 thread
+info string NNUE evaluation using nn-1c0000000000.nnue (133MiB, (22528, 3072, 15, 32, 1))
+info string NNUE evaluation using nn-37f18f62d772.nnue (6MiB, (22528, 128, 15, 32, 1))
+info depth 1 seldepth 2 multipv 1 score cp -970 nodes 3 nps 3000 hashfull 0 tbhits 0 time 1 pv d8e8
+info depth 2 seldepth 3 multipv 1 score cp -972 nodes 9 nps 9000 hashfull 0 tbhits 0 time 1 pv d8e8 h1h7
+info depth 3 seldepth 4 multipv 1 score cp -946 nodes 23 nps 23000 hashfull 0 tbhits 0 time 1 pv d8e8 h1h7 e8f8
+info depth 4 seldepth 6 multipv 1 score cp -932 nodes 54 nps 54000 hashfull 0 tbhits 0 time 1 pv d8e7 h1h7 e7d8
+info depth 5 seldepth 6 multipv 1 score cp -946 nodes 99 nps 99000 hashfull 0 tbhits 0 time 1 pv d8e7 h1h7 e7e8
+bestmove d8e7 ponder h1h7
+
+
+move: d8e7
+
+// << calculating----------------------------------------------------------------------------------------------------
+
+// check >>
+
+MAP_v2__v2_L<v2>:
+pri-key   | pri-value  
+----------+------------
+[1, 0]    | List: 2    
+[4, 0]    | List: 4    
+[5, 0]    | List: 7    
+[6, 0]    | List: 3    
+[7, 0]    | List: 7    
+[1, 1]    | List: 3    
+[2, 2]    | List: 14   
+[0, 3]    | List: 1    
+
+
+// << check
+
+// calculating---------------------------------------------------------------------------------------------------- >>
+
+. . . . . . . . 
+. . . . k . . . 
+. . . . . . . . 
+. . . . . . . . 
+P . . . . . . . 
+B . R . . . . . 
+. . . . . . . . 
+. N . . K B N R 
+
+
+8/4k3/8/8/P7/B1R5/8/1N2KBNR b - - 0 1
+
+info string Available processors: 0-7
+info string Using 1 thread
+info string NNUE evaluation using nn-1c0000000000.nnue (133MiB, (22528, 3072, 15, 32, 1))
+info string NNUE evaluation using nn-37f18f62d772.nnue (6MiB, (22528, 128, 15, 32, 1))
+info depth 1 seldepth 2 multipv 1 score cp -929 nodes 6 nps 6000 hashfull 0 tbhits 0 time 1 pv e7d8
+info depth 2 seldepth 4 multipv 1 score cp -947 nodes 36 nps 36000 hashfull 0 tbhits 0 time 1 pv e7f7 c3f3 f7e8
+info depth 3 seldepth 4 multipv 1 score cp -945 nodes 63 nps 63000 hashfull 0 tbhits 0 time 1 pv e7e8
+info depth 4 seldepth 6 multipv 1 score cp -932 nodes 94 nps 94000 hashfull 0 tbhits 0 time 1 pv e7d8
+info depth 5 seldepth 6 multipv 1 score cp -956 nodes 138 nps 138000 hashfull 0 tbhits 0 time 1 pv e7e8 h1h7 e8d8
+bestmove e7e8 ponder h1h7
+
+
+move: e7e8
+
+// << calculating----------------------------------------------------------------------------------------------------
+
+// check >>
+
+MAP_v2__v2_L<v2>:
+pri-key   | pri-value  
+----------+------------
+[1, 0]    | List: 1    
+[4, 0]    | List: 4    
+[5, 0]    | List: 7    
+[6, 0]    | List: 3    
+[7, 0]    | List: 7    
+[0, 2]    | List: 7    
+[2, 2]    | List: 13   
+[0, 3]    | List: 1    
+
+
+// << check
+
+// calculating---------------------------------------------------------------------------------------------------- >>
+
+. . . . k . . . 
+. . R . . . . . 
+. . . . . . . . 
+. . . . . . . . 
+P . . . . . . . 
+B . . . . . . . 
+. . . . . . . . 
+. N . . K B N R 
+
+
+4k3/2R5/8/8/P7/B7/8/1N2KBNR b - - 0 1
+
+info string Available processors: 0-7
+info string Using 1 thread
+info string NNUE evaluation using nn-1c0000000000.nnue (133MiB, (22528, 3072, 15, 32, 1))
+info string NNUE evaluation using nn-37f18f62d772.nnue (6MiB, (22528, 128, 15, 32, 1))
+info depth 1 seldepth 2 multipv 1 score cp -896 nodes 1 nps 1000 hashfull 0 tbhits 0 time 1 pv e8d8
+info depth 2 seldepth 3 multipv 1 score cp -924 nodes 5 nps 5000 hashfull 0 tbhits 0 time 1 pv e8d8 h1h7
+info depth 3 seldepth 4 multipv 1 score cp -956 nodes 8 nps 8000 hashfull 0 tbhits 0 time 1 pv e8d8 h1h7 d8e8
+info depth 4 seldepth 5 multipv 1 score mate -2 nodes 20 nps 20000 hashfull 0 tbhits 0 time 1 pv e8d8 h1h7 d8e8 h7h8
+info depth 5 seldepth 5 multipv 1 score mate -2 nodes 27 nps 27000 hashfull 0 tbhits 0 time 1 pv e8d8 h1h7 d8e8 h7h8
+bestmove e8d8 ponder h1h7
+
+
+move: e8d8
+
+// << calculating----------------------------------------------------------------------------------------------------
+
+// check >>
+
+MAP_v2__v2_L<v2>:
+pri-key   | pri-value  
+----------+------------
+[1, 0]    | List: 2    
+[4, 0]    | List: 4    
+[5, 0]    | List: 7    
+[6, 0]    | List: 3    
+[7, 0]    | List: 7    
+[0, 2]    | List: 7    
+[0, 3]    | List: 1    
+[2, 6]    | List: 14   
+
+
+// << check
+
+// calculating---------------------------------------------------------------------------------------------------- >>
+
+. . . k . . . . 
+. . R . . . . R 
+. . . . . . . . 
+. . . . . . . . 
+P . . . . . . . 
+B . . . . . . . 
+. . . . . . . . 
+. N . . K B N . 
+
+
+3k4/2R4R/8/8/P7/B7/8/1N2KBN1 b - - 0 1
+
+info string Available processors: 0-7
+info string Using 1 thread
+info string NNUE evaluation using nn-1c0000000000.nnue (133MiB, (22528, 3072, 15, 32, 1))
+info string NNUE evaluation using nn-37f18f62d772.nnue (6MiB, (22528, 128, 15, 32, 1))
+info depth 1 seldepth 2 multipv 1 score cp -1002 nodes 1 nps 1000 hashfull 0 tbhits 0 time 1 pv d8e8
+info depth 2 seldepth 3 multipv 1 score mate -1 nodes 5 nps 5000 hashfull 0 tbhits 0 time 1 pv d8e8 h7h8
+info depth 3 seldepth 3 multipv 1 score mate -1 nodes 7 nps 7000 hashfull 0 tbhits 0 time 1 pv d8e8 h7h8
+info depth 4 seldepth 3 multipv 1 score mate -1 nodes 9 nps 9000 hashfull 0 tbhits 0 time 1 pv d8e8 h7h8
+info depth 5 seldepth 3 multipv 1 score mate -1 nodes 11 nps 11000 hashfull 0 tbhits 0 time 1 pv d8e8 h7h8
+bestmove d8e8 ponder h7h8
+
+
+move: d8e8
+
+// << calculating----------------------------------------------------------------------------------------------------
+
+// check >>
+
+MAP_v2__v2_L<v2>:
+pri-key   | pri-value  
+----------+------------
+[1, 0]    | List: 2    
+[4, 0]    | List: 4    
+[5, 0]    | List: 7    
+[6, 0]    | List: 3    
+[0, 2]    | List: 7    
+[0, 3]    | List: 1    
+[2, 6]    | List: 13   
+[7, 6]    | List: 11   
+
+
+// << check
+
+// calculating---------------------------------------------------------------------------------------------------- >>
+
+. . . . k . . R 
+. . R . . . . . 
+. . . . . . . . 
+. . . . . . . . 
+P . . . . . . . 
+B . . . . . . . 
+. . . . . . . . 
+. N . . K B N . 
+
+
+4k2R/2R5/8/8/P7/B7/8/1N2KBN1 b - - 0 1
+
+info string Available processors: 0-7
+info string Using 1 thread
+info string NNUE evaluation using nn-1c0000000000.nnue (133MiB, (22528, 3072, 15, 32, 1))
+info string NNUE evaluation using nn-37f18f62d772.nnue (6MiB, (22528, 128, 15, 32, 1))
+info depth 0 score mate 0
+bestmove (none)
+
+
+move: (none)
+
+// << calculating----------------------------------------------------------------------------------------------------
+

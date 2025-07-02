@@ -66,15 +66,11 @@ namespace SPACE_CHESS
 			await C.delay(500);
 			await ChessManager_1.MakeCpuMoveOnBoard(cpu_side: 'b'); // async
 			#region CheckForKingFall
-			if (ChessManager_1.CheckForKingFall('w')) Debug.Log($"{'w'} wins");
-			if (ChessManager_1.CheckForKingFall('b')) Debug.Log($"{'b'} wins");
+			if (ChessManager_1.CheckForKingFall(king_side: 'w')) Debug.Log($"{'b'} wins");
+			if (ChessManager_1.CheckForKingFall(king_side: 'b')) Debug.Log($"{'w'} wins");
 			#endregion
 			//
 			this.InProgress = false;
-			#region reach
-			ChessManager_1.ShowReach(false, (0, 0)); // hide everything
-			ChessManager_1.ShowReach(true, this.from_coord); // show reach for this from_coord
-			#endregion
 		}
 
 		bool InProgress = false;

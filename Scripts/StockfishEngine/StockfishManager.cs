@@ -6,7 +6,7 @@ using System.IO;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace SPACE_CHESS
+namespace SPACE_Stockfish
 {
 	/*
         Usage:
@@ -15,9 +15,9 @@ namespace SPACE_CHESS
         - Use StockfishEngine.Ins.SuggestAtDepthCoroutine(string fen, int depth(optional)) in a Coroutine to yield until ready
         - After coroutine finishes, read StockfishEngine.Ins.SuggestedMove for the best move
     */
-	public class StockfishEngine : MonoBehaviour
+	public class StockfishManager : MonoBehaviour
 	{
-		public static StockfishEngine Ins { get; private set; }
+		public static StockfishManager Ins { get; private set; }
 
 		[Header("loc_file")]
 		[Tooltip("/loc_file.exe")]

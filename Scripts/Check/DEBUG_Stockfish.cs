@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using SPACE_UTIL;
+using SPACE_Stockfish;
 
 namespace SPACE_CHESS
 {
@@ -48,8 +49,8 @@ namespace SPACE_CHESS
 			// return $"{placement} {oppo_side} - - 0 1";
 
 			Debug.Log("calculating...");
-			yield return StockfishEngine.Ins.SuggestAtDepthCoroutine(fen: FEN);
-			Debug.Log("SuggestedMove: " + StockfishEngine.Ins.SuggestedMove);
+			yield return StockfishManager.Ins.SuggestAtDepthCoroutine(fen: FEN);
+			Debug.Log("SuggestedMove: " + StockfishManager.Ins.SuggestedMove);
 			Debug.Log("SquareUnderAttack: " + ChessManager_1.SquareUnderAttack(Ce.FEN_to_B(FEN), coord: this.coord, oppo_side: 'w'));
 
 			yield return null;
