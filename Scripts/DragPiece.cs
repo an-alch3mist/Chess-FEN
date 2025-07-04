@@ -73,6 +73,11 @@ namespace SPACE_CHESS
 			this.InProgress = false;
 
 			#region reach
+			if(this.CanMoveUnit == true) // still held down
+			{
+				ChessManager_1.ShowReach(false, (0, 0)); // hide everything
+				ChessManager_1.ShowReach(true, this.from_coord); // show reach for this from_coord
+			}
 			/* // why calling reach here, leads an error of key not found in MAP_from_availableTo DOC ?
 			ChessManager_1.ShowReach(false, (0, 0)); // hide everything
 			ChessManager_1.ShowReach(true, this.from_coord); // show reach for this from_coord

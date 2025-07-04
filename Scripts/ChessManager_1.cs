@@ -343,8 +343,11 @@ namespace SPACE_CHESS
 			char from_side = get_side_at_coord(new_B, from_coord);
 			char to_side = get_side_at_coord(new_B, to_coord);
 
-			if (to_side == from_side) // no move is made
+			if (to_side == from_side || from_side == ' ') // no move is made
+			{
+				Debug.Log($"similar side/from_side = ' ' \n{from_coord} {to_coord}, from_side: {from_side}");
 				return new_B;
+			}
 
 			// make the move
 			new_B[to_coord.y][to_coord.x] = new_B[from_coord.y][from_coord.x];
@@ -486,9 +489,9 @@ namespace SPACE_CHESS
 							oppo unit sprite
 					*/
 					main_OBJ_reach[to_coord.y][to_coord.x].SetActive(true);
-					if (get_side_at_coord(main_B, to_coord) == oppo_side)
+					if (get_side_at_coord(main_B, to_coord) == oppo_side) // found oppo side
 						main_OBJ_reach[to_coord.y][to_coord.x].NameStartsWith("oppo").SetActive(true);
-					else
+					else if(get_side_at_coord(main_B, to_coord) == ' ') // empty
 						main_OBJ_reach[to_coord.y][to_coord.x].NameStartsWith("empty").SetActive(true);
 				}
 			}
