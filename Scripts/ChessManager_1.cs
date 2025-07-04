@@ -58,6 +58,9 @@ namespace SPACE_CHESS
 
 		static string IN = "n2pk3/8/8/8/8/8/P7/RNBQKBNR b"; // initial FEN
 		static List<List<char>> main_B;
+		#region castling
+		static Dictionary<v2, bool> MAP_hasMoved; 
+		#endregion
 		#region OBJ
 		static List<List<GameObject>> main_OBJ_unit;
 		static List<List<GameObject>> main_OBJ_reach;
@@ -66,6 +69,19 @@ namespace SPACE_CHESS
 		{
 			// parse IN here >>
 			main_B = Ce.FEN_to_B(IN);
+			#region casting
+			MAP_hasMoved = new Dictionary<v2, bool>()
+			{
+				[Ce.get_coord("e1")] = !(main_B.GT(Ce.get_coord("e1")) == 'K'),
+				[Ce.get_coord("a1")] = !(main_B.GT(Ce.get_coord("a1")) == 'R'),
+				[Ce.get_coord("h1")] = !(main_B.GT(Ce.get_coord("h1")) == 'R'),
+
+				[Ce.get_coord("e8")] = !(main_B.GT(Ce.get_coord("e8")) == 'k'),
+				[Ce.get_coord("a8")] = !(main_B.GT(Ce.get_coord("a8")) == 'r'),
+				[Ce.get_coord("h8")] = !(main_B.GT(Ce.get_coord("h8")) == 'r'),
+			};
+			LOG.SaveLog(MAP_hasMoved.ToTable(name: "MAP_hasMoved<>"));
+			#endregion
 
 			#region OBJ
 			Dictionary<char, GameObject> MAP_unitType_prefab = new Dictionary<char, GameObject>();
@@ -110,6 +126,8 @@ namespace SPACE_CHESS
 				}
 			}
 			#endregion
+
+			LOG.SaveLog(MAP_from_availableTo(main_B, 'b').ToTable(name: "MAP_from_availableTo<> 'b'"));
 			// << parse IN here
 		}
 
@@ -258,7 +276,7 @@ namespace SPACE_CHESS
 					}
 			}
 			// K
-			else if (unit.fmatch(@"[K]", "gi"))
+			else if (unit.fmatch(@"[K]", "gi")) // 'K' or 'k'
 			{
 				foreach (v2 dir in v2.getDIR(diagonal: true))
 				{
@@ -275,6 +293,32 @@ namespace SPACE_CHESS
 					// when empty space
 					_reachable_COORD_from_unit.Add(coord);
 				}
+				#region castling
+				//is resulting in stack overflow when a even a non king unit eg: 'B' is make InstantDown(0)
+				char unit_Q = (get_side_at_coord(B, from_coord) == 'w') ? 'R' : 'r';
+
+				if (MAP_hasMoved.ContainsKey(from_coord))
+					if (MAP_hasMoved[from_coord] == false) // 'K'
+					{
+						Debug.Log(MAP_hasMoved.ToTable(name: "MAP_hasMoved check inside availableTo"));
+						/*
+						v2 coord = from_coord + (2, 0);
+						Debug.Log("entered square under attack check without method");
+						LOG.SaveLog(MAP_from_availableTo(B, king_side: 'w').ToTable(name: "MAP_from_availableTo"));
+						// LOG.SaveLog(MAP_from_availableTo(B, king_side: 'b').ToTable(name: "MAP_from_availableTo"));
+
+						// Debug.Log(SquareUnderAttack(B, from_coord + (0, 0), oppo_side: 'b'));
+							if (!SquareUnderAttack(B, from_coord + (0, 0), oppo_side: 'b') &&
+								!SquareUnderAttack(B, from_coord + (1, 0), oppo_side: 'b') &&
+								!SquareUnderAttack(B, from_coord + (2, 0), oppo_side: 'b'))
+							{
+								// if all 3 squares including king unit square is safe from oppo_side: 'b'
+								if (MAP_hasMoved[from_coord + (3, 0)] == false) // 'R' on kingside
+									_reachable_COORD_from_unit.Add(coord);
+							}
+						*/
+					}
+				#endregion
 			}
 			// any
 			else
@@ -402,10 +446,15 @@ namespace SPACE_CHESS
 		*/
 		public static bool SquareUnderAttack(List<List<char>> B, v2 coord, char oppo_side = 'b')
 		{
+			Debug.Log("entered square under attack check");
+			LOG.SaveLog(MAP_from_availableTo(B, king_side: 'w').ToTable(name: "MAP_from_availableTo"));
+
+			/*
 			foreach (var kvp in MAP_from_availableTo(B, king_side: oppo_side))
 				foreach (v2 to_coord in kvp.Value)
 					if (to_coord == coord)
 						return true;
+			*/
 			return false;
 		}
 		// called externally when unit is drag and dropped >>
@@ -516,6 +565,15 @@ namespace SPACE_CHESS
 			// no moves found
 			return true;
 		}
+
+		#region caslting
+		public static void UpdateHasMoved_MAP(v2 from_coord, v2 to_coord)
+		{
+			if (MAP_hasMoved.ContainsKey(from_coord) == true)
+				if (to_coord != from_coord)
+					MAP_hasMoved[from_coord] = true;
+		} 
+		#endregion
 		#endregion
 	}
 }

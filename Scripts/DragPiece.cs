@@ -39,9 +39,10 @@ namespace SPACE_CHESS
 			else // released instant
 			{
 				// LOG.SaveLog(ChessManager.Ins.getAvailablePos(C_E.get_chess_coord(release_v2)).ToTable());
-				if (ChessManager_1.IsAllowed(from_coord, to_coord: pos_I, king_side: 'w') && this.InProgress == false) // released at valid coord ?
+				if ((ChessManager_1.IsAllowed(from_coord, to_coord: pos_I, king_side: 'w') == true) && (this.InProgress == false)) // released at valid coord ?
 				{
 					ChessManager_1.MakeMoveOnBoard(from_coord, to_coord: pos_I); // could be 'w' or 'b'
+					ChessManager_1.UpdateHasMoved_MAP(from_coord, to_coord: pos_I);
 					#region reach
 					ChessManager_1.ShowReach(false, (0, 0));
 					#endregion
@@ -71,13 +72,15 @@ namespace SPACE_CHESS
 			#endregion
 			//
 			this.InProgress = false;
-
 			#region reach
-			if(this.CanMoveUnit == true) // still held down
+			/*
+			if (this.CanMoveUnit == true) // still held down
 			{
 				ChessManager_1.ShowReach(false, (0, 0)); // hide everything
 				ChessManager_1.ShowReach(true, this.from_coord); // show reach for this from_coord
 			}
+			*/
+
 			/* // why calling reach here, leads an error of key not found in MAP_from_availableTo DOC ?
 			ChessManager_1.ShowReach(false, (0, 0)); // hide everything
 			ChessManager_1.ShowReach(true, this.from_coord); // show reach for this from_coord
@@ -96,9 +99,9 @@ namespace SPACE_CHESS
 			#endregion
 		}
 
-		bool InProgress = false;
 		bool CanMoveUnit = false;
 		v2 from_coord;
+		bool InProgress = false;
 		private void OnMouseDown() // works: even when component disabled
 		{
 			from_coord = C.round(INPUT.M.getPos3D);

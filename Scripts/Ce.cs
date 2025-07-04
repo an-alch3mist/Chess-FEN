@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System.Linq;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Text.RegularExpressions;
@@ -175,6 +176,25 @@ public static class Ce
 				}
 			}
 		return B_OBJ;
+	}
+	#endregion
+
+	#region ext
+	public static T GT<T>(this IEnumerable<IEnumerable<T>> B, v2 coord)
+	{
+		try
+		{
+			return B.ElementAt(coord.y).ElementAt(coord.x);
+		}
+		catch (System.Exception e)
+		{
+			if(B.Count() != 0)
+				Debug.LogError($"no element at {coord} with B dimension h: {B.Count()}, w: {B.ElementAt(0).Count()}");
+			else
+				Debug.LogError($"no element at {coord} with B dimension h: 0, w: 0");
+
+			throw;
+		}
 	}
 	#endregion
 }
