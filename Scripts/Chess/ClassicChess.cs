@@ -32,7 +32,7 @@ namespace SPACE_CHESS
 			#endregion
 		}
 
-		#region require
+		#region require // TO-CHECK
 		static char GetUnitType(Board<char> B, v2 coord) // coord should be inrange
 		{
 			#region error
@@ -224,6 +224,33 @@ namespace SPACE_CHESS
 				}
 			return false;
 		}
+
+		#region for castling
+		static string get_castle_str(Board<(char unitBegin, bool hasMoved)> castle_B)
+		{
+			v2 K_coord = (+4, 0);
+			v2 k_coord = (+4, +7);
+			v2 K_R_coord = (+7, 0);
+			v2 Q_R_coord = (0, 0);
+			v2 k_r_coord = (+7, +7);
+			v2 q_r_coord = (0, +7);
+
+			string castle_str = "";
+			// KQ
+			if(castle_B.GT(K_coord).unitBegin == 'K' && castle_B.GT(K_coord).hasMoved == false)
+			{
+				if (castle_B.GT(K_R_coord).unitBegin == 'R' && castle_B.GT(K_R_coord).hasMoved == false) castle_str += "K";
+				if (castle_B.GT(Q_R_coord).unitBegin == 'R' && castle_B.GT(Q_R_coord).hasMoved == false) castle_str += "Q";
+			}
+			// kq
+			if (castle_B.GT(k_coord).unitBegin == 'k' && castle_B.GT(k_coord).hasMoved == false)
+			{
+				if (castle_B.GT(k_r_coord).unitBegin == 'r' && castle_B.GT(k_r_coord).hasMoved == false) castle_str += "k";
+				if (castle_B.GT(q_r_coord).unitBegin == 'r' && castle_B.GT(q_r_coord).hasMoved == false) castle_str += "q";
+			}
+			return castle_str;
+		} 
+		#endregion
 		#endregion
 		/*
 			require - GetCoordType(B, coord)		=> CoordType
