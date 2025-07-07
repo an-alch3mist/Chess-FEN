@@ -238,7 +238,9 @@ namespace SPACE_CHESS
 		*/
 		Dictionary<v2, List<(v2 toCoord, ToUnitType coordType)>> MAP_from_NonDangerAvailableTo(char fromKingSide = 'w') // Board<char> B
 		{
-			
+
+
+			return null;
 		}
 	}
 
