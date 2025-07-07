@@ -128,7 +128,7 @@ namespace SPACE_CHESS
 			// 'w' or 'b' or ' '
 			char get_side_at_coord(v2 piece_coord) 
 			{
-				if(piece_coord.inrange((0, 0), (7, 7)))
+				if(piece_coord.in_range((0, 0), (7, 7)))
 				{
 					char piece_at_coord = B[piece_coord.y][piece_coord.x];
 					if (piece_at_coord == ' ')
@@ -149,7 +149,7 @@ namespace SPACE_CHESS
 				   c = from_coord + (+1, +1),
 				   d = from_coord + (0, +2);
 
-				if (a.inrange((0, 0), (7, 7)))
+				if (a.in_range((0, 0), (7, 7)))
 					if (get_side_at_coord(a) == ' ') // a has to be empty
 					{
 						AllAvailPos.Add(a);
@@ -157,10 +157,10 @@ namespace SPACE_CHESS
 							if (get_side_at_coord(d) == ' ') // d has to be empty
 								AllAvailPos.Add(d);
 					}
-				if (b.inrange((0, 0), (7, 7)))
+				if (b.in_range((0, 0), (7, 7)))
 					if (get_side_at_coord(b) == oppo_side) // b has to be opp_side
 						AllAvailPos.Add(b);
-				if (c.inrange((0, 0), (7, 7)))
+				if (c.in_range((0, 0), (7, 7)))
 					if (get_side_at_coord(c) == oppo_side) // c has to be opp_side
 						AllAvailPos.Add(c);
 			}
@@ -183,7 +183,7 @@ namespace SPACE_CHESS
 				foreach (v2 n in PossibleDelta)
 				{
 					v2 coord = from_coord + n;
-					if (coord.inrange((0, 0), (7, 7)))
+					if (coord.in_range((0, 0), (7, 7)))
 						if (get_side_at_coord(coord) != oppo_side) // coord has to be opp_side
 							AllAvailPos.Add(coord);
 				}
@@ -196,7 +196,7 @@ namespace SPACE_CHESS
 					for (int i0 = 1; i0 <= 7; i0 += 1)
 					{
 						v2 coord = from_coord + dir * i0;
-						if (coord.inrange(Ce.bound.m, Ce.bound.M) == false)
+						if (coord.in_range(Ce.bound.m, Ce.bound.M) == false)
 							break;
 						if (get_side_at_coord(coord) == curr_side)
 							break;
@@ -225,7 +225,7 @@ namespace SPACE_CHESS
 					for (int i0 = 1; i0 <= 7; i0 += 1)
 					{
 						v2 coord = from_coord + dir * i0;
-						if (coord.inrange(Ce.bound.m, Ce.bound.M) == false)
+						if (coord.in_range(Ce.bound.m, Ce.bound.M) == false)
 							break;
 						if (get_side_at_coord(coord) == curr_side)
 							break;
@@ -246,7 +246,7 @@ namespace SPACE_CHESS
 					for (int i0 = 1; i0 <= 7; i0 += 1)
 					{
 						v2 coord = from_coord + dir * i0;
-						if (coord.inrange(Ce.bound.m, Ce.bound.M) == false)
+						if (coord.in_range(Ce.bound.m, Ce.bound.M) == false)
 							break;
 						if (get_side_at_coord(coord) == curr_side)
 							break;
@@ -264,7 +264,7 @@ namespace SPACE_CHESS
 				foreach (v2 dir in v2.getDIR(diagonal: true))
 				{
 					v2 coord = from_coord + dir * 1;
-					if (coord.inrange(Ce.bound.m, Ce.bound.M) == false)
+					if (coord.in_range(Ce.bound.m, Ce.bound.M) == false)
 						continue; // break;
 					if (get_side_at_coord(coord) == curr_side)
 						continue; // break;

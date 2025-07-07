@@ -24,12 +24,12 @@ namespace SPACE_CHESS
 
 		#region OBJ
 		[SerializeField] List<GameObject> PREFAB_ref;
-		static List<GameObject> PREFAB; 
+		static List<GameObject> PREFAB;
 		#endregion
 		private void Awake()
 		{
 			#region OBJ
-			PREFAB = this.PREFAB_ref; 
+			PREFAB = this.PREFAB_ref;
 			#endregion
 			Gather();
 			Debug.Log("Awake(): " + this);
@@ -39,7 +39,7 @@ namespace SPACE_CHESS
 		[SerializeField] v2 check_coord_1 = (4, 4);
 		private void Update()
 		{
-			if(INPUT.M.InstantDown(0))
+			if (INPUT.M.InstantDown(0))
 			{
 				// LOG.SaveLog(reachable_COORD_from_unit(main_B, this.check_coord_0).ToTable(name: "LIST<v2>: "));
 				// LOG.SaveLog(opp_units_threatned_king(main_B, 'w').ToTable());
@@ -52,14 +52,14 @@ namespace SPACE_CHESS
 			INPUT.M.up = Vector3.forward;
 			UIToolTip.Ins.Show();
 			UIToolTip.Ins.SetPos(INPUT.UI.pos);
-			UIToolTip.Ins.SetText(Ce.get_chess_coord(INPUT.M.getPos3D)); 
+			UIToolTip.Ins.SetText(Ce.get_chess_coord(INPUT.M.getPos3D));
 			#endregion
 		}
 
 		static string IN = "n2pk3/8/8/8/8/8/P7/RNBQKBNR b"; // initial FEN
 		static List<List<char>> main_B;
 		#region castling
-		static Dictionary<v2, bool> MAP_hasMoved; 
+		static Dictionary<v2, bool> MAP_hasMoved;
 		#endregion
 		#region OBJ
 		static List<List<GameObject>> main_OBJ_unit;
@@ -171,7 +171,7 @@ namespace SPACE_CHESS
 				   c = from_coord + DELTA[2],
 				   d = from_coord + DELTA[3];
 
-				if (a.inrange(Ce.m, Ce.M))
+				if (a.in_range(Ce.m, Ce.M))
 					if (get_side_at_coord(B, a) == ' ') // a has to be empty
 					{
 						_reachable_COORD_from_unit.Add(a);
@@ -179,10 +179,10 @@ namespace SPACE_CHESS
 							if (get_side_at_coord(B, d) == ' ') // d has to be empty
 								_reachable_COORD_from_unit.Add(d);
 					}
-				if (b.inrange(Ce.m, Ce.M))
+				if (b.in_range(Ce.m, Ce.M))
 					if (get_side_at_coord(B, b) == oppo_side) // b has to be opp_side
 						_reachable_COORD_from_unit.Add(b);
-				if (c.inrange(Ce.m, Ce.M))
+				if (c.in_range(Ce.m, Ce.M))
 					if (get_side_at_coord(B, c) == oppo_side) // c has to be opp_side
 						_reachable_COORD_from_unit.Add(c);
 			}
@@ -205,7 +205,7 @@ namespace SPACE_CHESS
 				foreach (v2 n in DELTA)
 				{
 					v2 coord = from_coord + n;
-					if (coord.inrange((0, 0), (7, 7)))
+					if (coord.in_range((0, 0), (7, 7)))
 						if (get_side_at_coord(B, coord) == oppo_side || get_side_at_coord(B, coord) == ' ') // coord has to be opp_side or empty
 							_reachable_COORD_from_unit.Add(coord);
 				}
@@ -217,7 +217,7 @@ namespace SPACE_CHESS
 					for (int i0 = 1; i0 <= (Ce.M - Ce.m).x; i0 += 1)
 					{
 						v2 coord = from_coord + dir * i0;
-						if (coord.inrange(Ce.m, Ce.M) == false) // out of bounds
+						if (coord.in_range(Ce.m, Ce.M) == false) // out of bounds
 							break;
 						if (get_side_at_coord(B, coord) == curr_side) // curr_side
 							break;
@@ -244,7 +244,7 @@ namespace SPACE_CHESS
 					for (int i0 = 1; i0 <= (Ce.M - Ce.m).x; i0 += 1)
 					{
 						v2 coord = from_coord + dir * i0;
-						if (coord.inrange(Ce.m, Ce.M) == false)
+						if (coord.in_range(Ce.m, Ce.M) == false)
 							break;
 						if (get_side_at_coord(B, coord) == curr_side)
 							break;
@@ -263,7 +263,7 @@ namespace SPACE_CHESS
 					for (int i0 = 1; i0 <= (Ce.M - Ce.m).x; i0 += 1)
 					{
 						v2 coord = from_coord + dir * i0;
-						if (coord.inrange(Ce.m, Ce.M) == false)
+						if (coord.in_range(Ce.m, Ce.M) == false)
 							break;
 						if (get_side_at_coord(B, coord) == curr_side)
 							break;
@@ -281,7 +281,7 @@ namespace SPACE_CHESS
 				foreach (v2 dir in v2.getDIR(diagonal: true))
 				{
 					v2 coord = from_coord + dir * 1;
-					if (coord.inrange(Ce.m, Ce.M) == false)
+					if (coord.in_range(Ce.m, Ce.M) == false)
 						continue; // break;
 					if (get_side_at_coord(B, coord) == curr_side)
 						continue; // break;
@@ -468,7 +468,7 @@ namespace SPACE_CHESS
 				return true;
 			return false;
 		}
-		
+
 		public static void MakeMoveOnBoard(v2 from_coord, v2 to_coord)
 		{
 			#region OBJ
@@ -482,12 +482,12 @@ namespace SPACE_CHESS
 				Debug.Log(oppo_side);
 				Debug.Log(to_coord);
 				Debug.Log(main_OBJ_unit[to_coord.y][to_coord.x]);
-				*/			
+				*/
 				main_OBJ_unit[to_coord.y][to_coord.x].SetActive(false); // capture opponent unit if not empty
 			}
 			main_OBJ_unit[to_coord.y][to_coord.x] = main_OBJ_unit[from_coord.y][from_coord.x]; // ref to unit = from unit
 			main_OBJ_unit[from_coord.y][from_coord.x] = null; // empty unit = null obj
-			//
+															  //
 			#endregion
 
 			// board move >>
@@ -508,7 +508,7 @@ namespace SPACE_CHESS
 			string chess_move = best.split(@"\n").gl(0).split(@" ")[1];
 			Debug.Log("elapsed ms for best move: " + sw.ElapsedMilliseconds);
 			LOG.H("calculating" + '-'.repeat(100));
-			LOG.SaveLog(main_B.ToBoard('.'));
+			LOG.SaveLog(ToBoard(main_B, '.'));
 			LOG.SaveLog(Ce.B_to_FEN(main_B, oppo_side: cpu_side));
 			LOG.SaveLog(best, $"move: {chess_move}");
 			LOG.HEnd("calculating" + '-'.repeat(100));
@@ -518,7 +518,7 @@ namespace SPACE_CHESS
 			if (chess_move.fmatch(@"[a-h][1-8][a-h][1-8]") == false)
 			{
 				if (chess_move.fmatch(@"none") == true) { Debug.Log("Best move is none"); return; }
-				else									{ Debug.LogError("Best move is neither [a-h][1-8][a-h][1-8] nor its 'none'"); return; }
+				else { Debug.LogError("Best move is neither [a-h][1-8][a-h][1-8] nor its 'none'"); return; }
 			}
 			(v2 from_coord, v2 to_coord) = Ce.get_delta_coord(chess_move);
 			MakeMoveOnBoard(from_coord, to_coord);
@@ -527,7 +527,7 @@ namespace SPACE_CHESS
 		#region OBJ
 		public static void ShowReach(bool enable, v2 from_coord, char king_side = 'w')
 		{
-			if(enable == true)
+			if (enable == true)
 			{
 				char oppo_side = (king_side == 'w') ? 'b' : 'w';
 				foreach (v2 to_coord in MAP_from_availableTo(main_B, king_side: king_side)[from_coord])
@@ -540,7 +540,7 @@ namespace SPACE_CHESS
 					main_OBJ_reach[to_coord.y][to_coord.x].SetActive(true);
 					if (get_side_at_coord(main_B, to_coord) == oppo_side) // found oppo side
 						main_OBJ_reach[to_coord.y][to_coord.x].NameStartsWith("oppo").SetActive(true);
-					else if(get_side_at_coord(main_B, to_coord) == ' ') // empty
+					else if (get_side_at_coord(main_B, to_coord) == ' ') // empty
 						main_OBJ_reach[to_coord.y][to_coord.x].NameStartsWith("empty").SetActive(true);
 				}
 			}
@@ -572,10 +572,31 @@ namespace SPACE_CHESS
 			if (MAP_hasMoved.ContainsKey(from_coord) == true)
 				if (to_coord != from_coord)
 					MAP_hasMoved[from_coord] = true;
-		} 
+		}
 		#endregion
 		#endregion
+		// To Board 
+		public static string ToBoard<T>(IEnumerable<IEnumerable<T>> B, char emptyChar = '.')
+		{
+			string str = "";
+			for (int y = B.Count() - 1; y >= 0; y -= 1)
+			{
+				string line = "";
+				for (int x = 0; x < B.ElementAt(y).Count(); x += 1)
+				{
+					T elem = B.ElementAt(y).ElementAt(x);
+					if (elem.ToString().fmatch(@"^ *$", "g"))
+						line += emptyChar.repeat(elem.ToString().Length);
+					else
+						line += elem.ToString();
+					line += ' '; // gap between neighbours
+				}
+				str += line + '\n';
+			}
+			return str;
+		}
 	}
+
 }
 
 

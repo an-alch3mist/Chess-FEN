@@ -49,7 +49,7 @@ public static class Ce
 	// (0, 0)
 	public static string get_chess_coord(this v2 @v2)
 	{
-		if (@v2.inrange((0, 0), (7, 7)) == true)
+		if (@v2.in_range((0, 0), (7, 7)) == true)
 			return "" + "abcdefgh"[@v2.x] + "12345678"[@v2.y]; // "" at begining to make char + char = string, otherwise char + char = int
 		return "none";
 	}
