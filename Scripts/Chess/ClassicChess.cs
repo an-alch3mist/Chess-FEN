@@ -213,11 +213,8 @@ namespace SPACE_CHESS
 			}
 
 		}
-
-		static bool IsCoordInDanger(Board<char> B, v2 atCoord, char atKingUnitType = 'w')
+		static bool IsCoordInDanger(Board<char> B, v2 atCoord, char oppoKingUnitType = 'b')
 		{
-			char oppoKingUnitType = (atKingUnitType == 'w') ? 'b' : 'w';
-
 			for (int y = 0; y < B.h; y += 1)
 				for (int x = 0; x < B.w; x += 1)
 				{
@@ -231,14 +228,13 @@ namespace SPACE_CHESS
 		/*
 			require - GetCoordType(B, coord)		=> CoordType
 			require - GetAvailableTo(B, from_coord) => L<toCoord, coordType>
-			require - IsCoordInDanger(B, atCoord, atKingUnitType) => true/false
+			require - IsCoordInDanger(B, atCoord, oppoKingUnitType) => true/false
 
 			UnitType => char
 			ToUnitType => enum Empty/SameSide/OppoSide/none
 		*/
 		Dictionary<v2, List<(v2 toCoord, ToUnitType coordType)>> MAP_from_NonDangerAvailableTo(char fromKingSide = 'w') // Board<char> B
 		{
-
 
 			return null;
 		}
